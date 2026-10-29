@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deryne Four – Portfolio</title>
-  <meta name="description" content="Portfolio de Deryne Four, ingénieure Unity & C# : génération procédurale, R&D, prototypage et game jams.">
+  <title>Projets – Deryne Four</title>
+  <meta name="description" content="Tous les projets de Deryne Four : jeux Unity et Unreal, game jams, VR et projets d'école, avec vidéos.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -12,39 +12,31 @@
 </head>
 <body>
   <header class="nav">
-    <a class="nav__logo" href="#top">DF</a>
+    <a class="nav__logo" href="index.html">DF</a>
     <nav>
-      <a href="#projets">Projets</a>
-      <a href="#experience">Expérience</a>
-      <a href="#formation">Formation</a>
-      <a href="#loisirs">Loisirs</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Accueil</a>
+      <a href="projets.html" aria-current="page">Projets</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#formation">Formation</a>
+      <a href="index.html#loisirs">Loisirs</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="top">
+  <div class="banner banner--small" id="top">
     <section class="hero">
-      <p class="eyebrow">Ingénieure Unity &amp; C#</p>
-      <h1>Deryne Four</h1>
-      <p class="hero__lead">Game developer en R&amp;D chez Gameloft Paris. Je conçois des outils Unity, de la génération procédurale et des prototypes rapides, et je participe à des game jams dès que je peux.</p>
-      <div class="hero__links">
-        <a class="btn" href="#projets">Voir les projets</a>
-        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener">itch.io</a>
-        <a class="btn btn--ghost" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn--ghost" href="CV_Deryne_Four.pdf" target="_blank">CV (PDF)</a>
-      </div>
-      <ul class="tags">
-        <li>C#</li><li>C++</li><li>Unity (confirmé)</li><li>Unreal</li>
-        <li>Génération procédurale</li><li>Architecture logicielle</li><li>Prototypage</li>
-        <li>IA générative &amp; MCP</li><li>Git · GitLab · Perforce</li>
-      </ul>
+      <p class="eyebrow">Portfolio</p>
+      <h1>Projets</h1>
+      <p class="hero__lead">Jeux Unity et Unreal, game jams, réalité virtuelle et projets d'école, du plus récent au plus ancien.</p>
     </section>
+  </div>
 
+  <main>
     <section id="projets">
-      <h2>Projets</h2>
-      <p class="section-lead">Du plus récent au plus ancien. Clique sur une vidéo pour la lancer.</p>
 
-      <article class="project">
+      <p class="section-lead">Clique sur une vidéo pour la lancer, ou sur une miniature pour l'agrandir.</p>
+
+      <article class="project" id="dragon-heist">
         <button class="video" data-yt="eHa63hYSk3M" aria-label="Lire la vidéo de Dragon Heist"></button>
         <div class="project__body">
           <p class="year">2026</p>
@@ -61,7 +53,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="mask">
         <button class="video" data-yt="B4GymNxbt9g" aria-label="Lire la vidéo de Mask"></button>
         <div class="project__body">
           <p class="year">2026</p>
@@ -73,7 +65,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="fly-me-to-the-room">
         <button class="video" data-yt="cltRaqTl5Mg" aria-label="Lire la vidéo de Fly me to the Room"></button>
         <div class="project__body">
           <p class="year">2025</p>
@@ -85,7 +77,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="star-nebula">
         <button class="video" data-yt="vIRRODfAk0g" aria-label="Lire la vidéo de Star Nebula"></button>
         <div class="project__body">
           <p class="year">2025</p>
@@ -100,7 +92,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="the-raven">
         <button class="video" data-yt="gVHDz8_UDx8" aria-label="Lire la vidéo de The Raven"></button>
         <div class="project__body">
           <p class="year">2024</p>
@@ -110,7 +102,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="mustang-runner">
         <button class="video" data-yt="jNiAygSIh3o" aria-label="Lire la vidéo de Mustang Runner"></button>
         <div class="project__body">
           <p class="year">2024</p>
@@ -121,7 +113,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="waterloose">
         <button class="video" data-yt="ufqxh2Q9vwQ" aria-label="Lire la vidéo de WaterLoose"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
@@ -132,7 +124,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="scales-and-forks">
         <button class="video" data-yt="wqnSLnF5Rcc" aria-label="Lire la vidéo de Scales &amp; Forks"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
@@ -147,7 +139,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="thalassa-rv">
         <button class="video" data-yt="MAafIw4F0PQ" aria-label="Lire la vidéo de Thalassa RV"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
@@ -159,19 +151,19 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="squirrel-vs-man">
         <button class="video" data-yt="RU5ATIRwp10" aria-label="Lire la vidéo de Squirrel VS Man"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
           <h3>Squirrel VS Man</h3>
-          <p class="meta">Unity C# · RPG/FPS hybride · UQAC</p>
-          <p class="desc">Hybride entre RPG et FPS.</p>
+          <p class="meta">Unity C# · Jeu 3D · UQAC · Équipe de 5</p>
+          <p class="desc">Vous incarnez un écureuil qui veut chasser les chasseurs de sa forêt. Trop petit pour attaquer les humains directement, il suit les conseils des autres animaux, qui lui parlent du feu… Un jeu sans prise de tête qui vous fera peut-être sourire !</p>
           <p class="role">Game Design · Game Play · Cheffe de projet</p>
           <a class="link" href="https://chevrubis.itch.io/squirrel-vs-man" target="_blank" rel="noopener">itch.io →</a>
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="snow-memories">
         <button class="video" data-yt="BtSh83b8zgo" aria-label="Lire la vidéo de Snow Memories"></button>
         <div class="project__body">
           <p class="year">2023</p>
@@ -181,7 +173,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="tales-of-stars">
         <button class="video" data-yt="1OfIG6QMp6U" aria-label="Lire la vidéo de Tales of Stars"></button>
         <div class="project__body">
           <p class="year">2023</p>
@@ -200,7 +192,7 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="virtual-campus">
         <button class="video" data-yt="bChaX3UtrPw" aria-label="Lire la vidéo de Virtual Campus"></button>
         <div class="project__body">
           <p class="year">2022</p>
@@ -210,120 +202,17 @@
           <p class="role">Cheffe de projet</p>
           <div class="thumbs">
             <img src="images/projets/epf-virtual-campus.png" alt="Logo EPF Virtual Campus" loading="lazy">
+            <img src="images/projets/virtual-campus-1.png" alt="Création de l'avatar astronaute" loading="lazy">
+            <img src="images/projets/virtual-campus-2.png" alt="Élèves sur le campus virtuel" loading="lazy">
           </div>
         </div>
       </article>
-    </section>
-
-    <section id="experience">
-      <h2>Expérience</h2>
-      <ol class="timeline">
-        <li>
-          <h3>Game Developer, CDI · Gameloft Paris, R&amp;D</h3>
-          <p class="meta">Depuis 2024 (plus de 2 ans)</p>
-          <ul>
-            <li>Outils Unity/C# qui accélèrent la production</li>
-            <li>Génération procédurale de contenu et architecture modulaire</li>
-            <li>POCs sur Unity et Unreal</li>
-            <li>Évaluation de solutions ML, IA générative et APIs pour le gameplay</li>
-            <li>Responsable de features majeures : code modulaire, testable et réutilisable</li>
-          </ul>
-        </li>
-        <li>
-          <h3>Mentee Develop@Ubisoft · Ubisoft Annecy</h3>
-          <p class="meta">Oct. 2023 – Fév. 2024</p>
-          <p>Jeu individuel en C++, accompagné par deux mentors d'Ubisoft Annecy.</p>
-        </li>
-        <li>
-          <h3>Game Developer, stage · Gameloft Paris</h3>
-          <p class="meta">Sept. 2023 – Mars 2024 (6 mois)</p>
-          <p>Prototypes Unity/C# : évaluation du ML et de l'IA générative, code modulaire et réutilisable.</p>
-        </li>
-      </ol>
-    </section>
-
-    <section id="formation">
-      <h2>Formation &amp; certifications</h2>
-      <div class="grid grid--2">
-        <article class="card card--logo">
-          <img src="images/logos/uqac.gif" alt="Logo UQAC">
-          <div>
-            <h3>Master 2 Informatique et Mathématiques, spécialité jeux vidéo</h3>
-            <p class="meta">UQAC, Université du Québec à Chicoutimi</p>
-            <p>Conception de jeux, moteurs de jeux, mathématiques et physique pour le jeu vidéo, jeux sérieux.</p>
-          </div>
-        </article>
-        <article class="card card--logo">
-          <img src="images/logos/epf.jpg" alt="Logo EPF">
-          <div>
-            <h3>Ingénieure généraliste, majeure Informatique et Numérique</h3>
-            <p class="meta">EPF Cachan</p>
-            <p>Génie logiciel, intelligence artificielle, virtualisation.</p>
-          </div>
-        </article>
-      </div>
-      <ul class="certs">
-        <li><img src="images/logos/unity.png" alt="" class="certs__logo"> Unity Confirmed (Unity Technologies)</li>
-        <li>Certifications Claude AI d'Anthropic : Claude Code in Action, Intro to Agent Skills, Intro to Subagents</li>
-        <li><a href="https://courses.tomlooman.com/p/unrealengine-cpp" target="_blank" rel="noopener">Professional Game Dev in C++ &amp; Unreal Engine</a> de Tom Looman (ex-Stanford CS193U)</li>
-      </ul>
-    </section>
-
-    <section id="loisirs">
-      <h2>Loisirs</h2>
-      <div class="hobbies">
-        <figure>
-          <img src="images/loisirs/crochet.jpg" alt="Poules en crochet" loading="lazy">
-          <figcaption>Crochet</figcaption>
-        </figure>
-        <figure>
-          <img src="images/loisirs/perles.webp" alt="Porte-clés poissons en perles" loading="lazy">
-          <figcaption>Tissage de perles</figcaption>
-        </figure>
-      </div>
-      <ul class="hobby-list">
-        <li><img src="images/logos/steam.webp" alt=""> Jeux vidéo : Baldur's Gate 3, Titanfall 2, Civilization 6</li>
-        <li><img src="images/logos/procreate.png" alt=""> Dessin numérique sur Procreate</li>
-        <li><span class="dot">⛵</span> Planche à voile et catamaran</li>
-        <li><span class="dot">🎮</span> Game jams</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Envie d'échanger sur un projet ou un poste ? Écris-moi sur LinkedIn.</p>
-      <div class="hero__links">
-        <a class="btn" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener">itch.io</a>
-      </div>
     </section>
   </main>
 
   <footer>© Deryne Four</footer>
 
   <dialog id="lightbox"><img alt=""><button aria-label="Fermer">×</button></dialog>
-  <script>
-    const box = document.getElementById('lightbox');
-    document.querySelectorAll('.video').forEach(btn => {
-      const id = btn.dataset.yt;
-      btn.style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;
-      btn.addEventListener('click', () => {
-        const frame = document.createElement('iframe');
-        frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
-        frame.title = btn.getAttribute('aria-label');
-        frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-        frame.className = 'video';
-        btn.replaceWith(frame);
-      });
-    });
-    document.querySelectorAll('.thumbs img, .hobbies img').forEach(img => {
-      img.addEventListener('click', () => {
-        box.querySelector('img').src = img.src;
-        box.querySelector('img').alt = img.alt;
-        box.showModal();
-      });
-    });
-    box.addEventListener('click', () => box.close());
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

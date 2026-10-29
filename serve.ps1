@@ -1,4 +1,4 @@
-$root = Join-Path $PSScriptRoot 'portfolio'
+$root = $PSScriptRoot
 $l = [System.Net.HttpListener]::new(); $l.Prefixes.Add('http://localhost:8642/'); $l.Start()
 $types = @{'.html'='text/html; charset=utf-8';'.css'='text/css';'.js'='text/javascript';'.png'='image/png';'.jpg'='image/jpeg';'.gif'='image/gif';'.webp'='image/webp';'.pdf'='application/pdf'}
 while ($l.IsListening) {
