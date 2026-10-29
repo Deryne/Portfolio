@@ -326,3 +326,274 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
   .nav a.lang { order: 1; }
   .nav nav { order: 2; }
 }
+
+
+
+/* Bancs de petits poissons et bulles */
+.fish-layer { position: fixed; inset: 0; z-index: 5; pointer-events: none; overflow: hidden; }
+.fish {
+  position: absolute; left: 0; top: 0; transform-origin: center;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .3)); will-change: transform;
+}
+.bubble {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(220, 240, 255, .75);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .8), rgba(170, 220, 255, .15) 60%);
+  animation: bubble-rise 2s ease-out forwards;
+}
+@keyframes bubble-rise {
+  0% { opacity: 0; transform: translate(0, 0) scale(.6); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translate(6px, -70px) scale(1.1); }
+}
+
+/* Bouton pour afficher ou masquer les poissons */
+.fish-toggle {
+  width: 34px; height: 34px; flex-shrink: 0; padding: 0; cursor: pointer;
+  display: grid; place-items: center; font-size: 1.05rem; line-height: 1;
+  background: var(--surface); border: 1px solid var(--surface-2); border-radius: 50%;
+  transition: border-color .15s, opacity .15s, filter .15s;
+}
+.fish-toggle:hover { border-color: var(--accent); }
+.fish-toggle[aria-pressed="false"] { filter: grayscale(1); opacity: .55; }
+.fish-toggle[aria-pressed="false"] span { position: relative; }
+.fish-toggle[aria-pressed="false"] span::after {
+  content: ""; position: absolute; left: -3px; right: -3px; top: 50%; height: 2px;
+  background: var(--text); transform: rotate(-35deg); border-radius: 2px;
+}
+@media (max-width: 640px) { .fish-toggle { order: 1; width: 30px; height: 30px; font-size: .95rem; } }
+
+/* Loisirs : cartes à collectionner « ultra rares » (illustration pleine carte, cadre doré, reflet holographique) */
+.cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 1rem;
+  counter-reset: card;
+}
+.hcard {
+  --rx: 0deg; --ry: 0deg; --mx: 50%; --my: 50%;
+  --c1: #ffb15c; --c2: #e0592a;                          /* couleur du « type » de la carte */
+  counter-increment: card;
+  aspect-ratio: 5 / 7; padding: 0; border: 0; background: none; cursor: pointer;
+  perspective: 1000px; font: inherit; color: #fff; text-align: left;
+}
+.hcard--water { --c1: #7fd3f0; --c2: #2f7fc4; }
+.hcard--psy   { --c1: #e5a4f0; --c2: #8a4fc4; }
+.hcard--wind  { --c1: #a8e6c8; --c2: #2f9c74; }
+.hcard--fire  { --c1: #ff8a7a; --c2: #a32638; }
+.hcard:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 16px; }
+.hcard__inner {
+  position: relative; display: block; width: 100%; height: 100%;
+  transform-style: preserve-3d; transition: transform .9s cubic-bezier(.3, .2, .2, 1.15);
+  transform: rotateX(var(--rx)) rotateY(calc(180deg + var(--ry)));
+}
+.hcard.is-open .hcard__inner { transform: rotateX(var(--rx)) rotateY(var(--ry)); }
+.hcard__back, .hcard__front {
+  position: absolute; inset: 0; border-radius: 16px; overflow: hidden;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .5);
+}
+
+/* ---------- dos de la carte ---------- */
+.hcard__back {
+  transform: rotateY(180deg);
+  display: grid; place-items: center; align-content: center; gap: .9rem;
+  padding: 3px;
+  background: linear-gradient(135deg, #fff3b0, #d4a017 22%, #fff6c9 42%, #b8860b 60%, #ffe58a 80%, #a87400);
+}
+.hcard__back::before {                                   /* panneau intérieur bleu nuit */
+  content: ""; position: absolute; inset: 3px; border-radius: 13px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 170, 80, .45), transparent 42%),
+    conic-gradient(from 0deg at 50% 42%, rgba(255, 255, 255, .06) 0 10deg, transparent 10deg 20deg) ,
+    linear-gradient(160deg, #2a3570, #10142a);
+  background-size: auto, auto, auto;
+}
+.hcard__emblem, .hcard__hint { position: relative; }
+.hcard__emblem {
+  width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center;
+  font: 700 1.6rem "Space Grotesk", sans-serif; color: #3a1e00;
+  background: radial-gradient(circle at 35% 30%, #fff3c4, #f6c14b 45%, #b8860b);
+  box-shadow: 0 0 0 4px #10142a, 0 0 0 6px #f6d36b, 0 0 30px rgba(255, 190, 80, .7);
+}
+.hcard__hint { color: #f6e7b8; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+.hcard:not(.is-open):hover .hcard__emblem { animation: emblem-pulse 1s ease-in-out infinite; }
+
+/* ---------- face de la carte ---------- */
+.hcard__front {
+  background: linear-gradient(135deg, #fff3b0, #d4a017 22%, #fff6c9 42%, #b8860b 60%, #ffe58a 80%, #a87400);
+}
+.hcard.is-open .hcard__front { box-shadow: 0 14px 30px rgba(0, 0, 0, .5), 0 0 26px color-mix(in srgb, var(--c1) 70%, transparent); }
+.hcard__front img {                                      /* illustration pleine carte */
+  position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px);
+  object-fit: cover; object-position: center 25%; border-radius: 13px;
+}
+.hcard__top {
+  position: absolute; top: 3px; left: 3px; right: 3px; z-index: 1;
+  display: flex; justify-content: space-between; align-items: center; gap: .4rem;
+  padding: .55rem .6rem 1.4rem; border-radius: 13px 13px 0 0;
+  background: linear-gradient(180deg, rgba(8, 10, 24, .85), rgba(8, 10, 24, .45) 60%, transparent);
+}
+.hcard__top strong {
+  font: 700 1rem/1.1 "Space Grotesk", sans-serif; letter-spacing: .01em;
+  background: linear-gradient(180deg, #fffbe6, #f6d36b); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .6));
+}
+.hcard__type {
+  width: 30px; height: 30px; flex-shrink: 0; display: grid; place-items: center; font-size: .95rem;
+  border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, var(--c1) 55%, var(--c2));
+  box-shadow: 0 0 0 2px #f6d36b, 0 0 12px var(--c1);
+}
+.hcard__text {
+  position: absolute; left: 14px; right: 14px; bottom: 14px; z-index: 1;
+  font-size: .66rem; font-style: italic; line-height: 1.3; color: #fdf6e3;
+  padding: .55rem .55rem .45rem; border-radius: 8px;
+  background: rgba(10, 12, 28, .62); backdrop-filter: blur(4px);
+  border: 1px solid rgba(246, 211, 107, .7);
+}
+.hcard__text::before {                                   /* badge de rareté */
+  content: "★ ULTRA RARE"; position: absolute; top: -.7rem; left: .5rem;
+  font: 700 .58rem/1 "Space Grotesk", sans-serif; letter-spacing: .08em; font-style: normal; color: #3a1e00;
+  padding: .25rem .45rem; border-radius: 999px;
+  background: linear-gradient(90deg, #ffe58a, #fff6c9, #d4a017); box-shadow: 0 2px 6px rgba(0, 0, 0, .4);
+}
+.hcard__foot {
+  position: absolute; left: 7px; right: 7px; bottom: 7px; z-index: 1; height: 24px; padding: 0 .55rem;
+  border-radius: 0 0 10px 10px; background: linear-gradient(90deg, #ffe58a, #fff6c9 45%, #e8b93a);
+  box-shadow: 0 -1px 0 rgba(58, 30, 0, .35);
+  display: flex; justify-content: space-between; align-items: center; gap: .3rem;
+  font: 700 .6rem/1 "Space Grotesk", sans-serif; color: #3a1e00; text-transform: uppercase; letter-spacing: .02em;
+  white-space: nowrap;
+}
+.hcard__stars { color: #7a3e00; letter-spacing: .02em; }
+.hcard__foot::after { content: counter(card, decimal-leading-zero) "/05"; opacity: .75; }
+
+/* reflet holographique + paillettes, qui suivent la souris */
+.hcard__front::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  mix-blend-mode: color-dodge; opacity: 0; transition: opacity .3s;
+  background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, .75), transparent 38%),
+    radial-gradient(circle, rgba(255, 255, 255, .55) 0 .8px, transparent 1.3px) 0 0 / 19px 19px,
+    radial-gradient(circle, rgba(255, 255, 255, .45) 0 .6px, transparent 1.1px) 7px 9px / 23px 23px,
+    linear-gradient(115deg, transparent 15%, rgba(255, 0, 170, .5) 30%, rgba(255, 220, 0, .5) 42%,
+      rgba(0, 255, 160, .5) 54%, rgba(0, 170, 255, .5) 66%, rgba(170, 0, 255, .5) 78%, transparent 90%) var(--mx) var(--my) / 250% 250%;
+  animation: holo-drift 6s linear infinite;
+}
+.hcard.is-open:hover .hcard__front::after { opacity: .7; }
+@keyframes holo-drift { 50% { filter: hue-rotate(60deg); } }
+
+/* trait de lumière qui balaie la carte de temps en temps */
+.hcard__inner::after {
+  content: ""; position: absolute; inset: 0; z-index: 3; border-radius: 16px; pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, .55) 50%, transparent 60%) -150% 0 / 250% 100% no-repeat;
+  opacity: 0;
+}
+.hcard.is-open .hcard__inner::after { opacity: 1; animation: shine 5s ease-in-out infinite; }
+@keyframes shine { 0%, 70% { background-position: -150% 0; } 100% { background-position: 250% 0; } }
+
+/* ---------- ouverture ---------- */
+.hcard.is-revealing { animation: card-pop .9s ease-out; }
+.hcard.is-revealing .hcard__front::before {
+  content: ""; position: absolute; inset: -40%; z-index: 4; pointer-events: none;
+  background: conic-gradient(from 0deg, transparent 0 10deg, rgba(255, 240, 180, .9) 12deg, transparent 16deg 40deg,
+    rgba(255, 255, 255, .9) 42deg, transparent 46deg 80deg, rgba(255, 220, 120, .9) 82deg, transparent 86deg 360deg),
+    radial-gradient(circle, rgba(255, 255, 255, .95), rgba(255, 220, 120, .5) 25%, transparent 55%);
+  animation: card-burst .9s ease-out forwards;
+}
+@keyframes card-pop { 40% { transform: scale(1.06); } }
+@keyframes card-burst { from { opacity: 1; transform: scale(.2) rotate(0); } to { opacity: 0; transform: scale(1.5) rotate(40deg); } }
+@keyframes emblem-pulse { 50% { transform: scale(1.08); box-shadow: 0 0 0 4px #10142a, 0 0 0 6px #f6d36b, 0 0 44px rgba(255, 190, 80, 1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hcard__inner { transition: none; }
+  .hcard.is-revealing, .hcard.is-revealing .hcard__front::before, .hcard:not(.is-open):hover .hcard__emblem,
+  .hcard__front::after, .hcard.is-open .hcard__inner::after { animation: none; }
+}
+.hcard--water .hcard__front img { object-position: center 52%; }
+
+/* Booster de cartes à ouvrir */
+.cards-wrap { position: relative; }
+.cards-wrap.is-sealed { min-height: 350px; }
+.cards-wrap.is-sealed .cards { visibility: hidden; }
+.booster-stage {
+  position: absolute; inset: 0; z-index: 3;
+  display: grid; place-items: center; align-content: start; gap: .8rem; padding-top: 1.5rem;
+}
+.cards-wrap:not(.is-sealed) .booster-stage { pointer-events: none; }
+.booster-stage.is-gone { animation: stage-out .5s ease-in forwards; }
+.booster {
+  position: relative; width: 170px; height: 250px; padding: 0; border: 0; cursor: pointer; background: none;
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, .55));
+  animation: booster-float 3s ease-in-out infinite;
+}
+.booster:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; border-radius: 10px; }
+.booster__body, .booster__tear {
+  position: absolute; left: 0; right: 0;
+  background:
+    linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, .45) 35%, transparent 50%) var(--shine, -120%) 0 / 300% 100% no-repeat,
+    linear-gradient(160deg, #ffcf6b, #ff8a3d 30%, #c94f8f 60%, #4b3fb0);
+}
+/* bord cranté façon emballage, en haut et en bas */
+.booster__tear {
+  top: 0; height: 30px;
+  clip-path: polygon(0 18%, 5% 0, 10% 18%, 15% 0, 20% 18%, 25% 0, 30% 18%, 35% 0, 40% 18%, 45% 0, 50% 18%, 55% 0, 60% 18%, 65% 0, 70% 18%, 75% 0, 80% 18%, 85% 0, 90% 18%, 95% 0, 100% 18%, 100% 100%, 0 100%);
+  border-bottom: 2px dashed rgba(255, 255, 255, .7);
+  transform-origin: 0 100%;
+}
+.booster__body {
+  top: 30px; bottom: 0;
+  display: grid; place-items: center; align-content: center; gap: .35rem; color: #fff; text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 95% 100%, 90% 94%, 85% 100%, 80% 94%, 75% 100%, 70% 94%, 65% 100%, 60% 94%, 55% 100%, 50% 94%, 45% 100%, 40% 94%, 35% 100%, 30% 94%, 25% 100%, 20% 94%, 15% 100%, 10% 94%, 5% 100%, 0 94%);
+}
+.booster__body::before {                              /* paillettes de l'emballage */
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, .9) 0 1px, transparent 1.6px) 0 0 / 14px 14px,
+    radial-gradient(circle, rgba(255, 255, 255, .7) 0 .8px, transparent 1.3px) 7px 5px / 19px 19px;
+}
+.booster__logo {
+  width: 70px; height: 70px; border-radius: 50%; display: grid; place-items: center;
+  font: 700 1.5rem "Space Grotesk", sans-serif; color: #3a1e00;
+  background: radial-gradient(circle at 35% 30%, #fff3c4, #f6c14b 45%, #b8860b);
+  box-shadow: 0 0 0 3px #fff, 0 0 24px rgba(255, 230, 150, .9);
+}
+.booster__title { font: 700 1.35rem/1 "Space Grotesk", sans-serif; text-shadow: 0 2px 6px rgba(0, 0, 0, .45); }
+.booster__sub {
+  font: 700 .62rem/1 "Space Grotesk", sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  padding: .3rem .55rem; border-radius: 999px; color: #3a1e00;
+  background: linear-gradient(90deg, #ffe58a, #fff6c9, #d4a017);
+}
+.booster:hover { --shine: 220%; }
+.booster:hover .booster__body, .booster:hover .booster__tear { transition: background-position .8s; }
+.booster__hint { color: var(--muted); font-size: .9rem; margin: 0; }
+
+/* ouverture : tremblement, déchirure, éclat */
+.booster-stage.is-opening .booster { animation: booster-shake .6s ease-in-out; }
+.booster-stage.is-opening .booster__tear { animation: tear-off .5s .6s ease-in forwards; }
+.booster-stage.is-opening .booster::after {
+  content: ""; position: absolute; left: 50%; top: 30px; width: 10px; height: 10px; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 60px 40px rgba(255, 240, 190, .95), 0 0 140px 90px rgba(255, 170, 80, .6);
+  opacity: 0; animation: pack-glow .6s .75s ease-out forwards;
+}
+.booster-stage.is-opening .booster__hint { opacity: 0; transition: opacity .3s; }
+
+/* les cartes jaillissent du booster */
+.hcard.is-dealt { animation: deal .7s cubic-bezier(.2, .8, .3, 1.1) both; }
+@keyframes deal {
+  from { transform: translate(var(--fx), var(--fy)) scale(.45) rotate(var(--fr)); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes booster-float { 50% { transform: translateY(-8px) rotate(-1.5deg); } }
+@keyframes booster-shake {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(-6deg) scale(1.03); } 30% { transform: rotate(5deg) scale(1.05); }
+  45% { transform: rotate(-4deg) scale(1.06); } 60% { transform: rotate(3deg) scale(1.07); } 80% { transform: rotate(-1deg) scale(1.08); }
+}
+@keyframes tear-off { to { transform: translate(60px, -90px) rotate(35deg); opacity: 0; } }
+@keyframes pack-glow { 30% { opacity: 1; } to { opacity: 0; } }
+@keyframes stage-out { to { opacity: 0; transform: translateY(30px) scale(.9); visibility: hidden; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .booster, .hcard.is-dealt, .booster-stage.is-opening .booster, .booster-stage.is-opening .booster__tear { animation: none; }
+}
+.section-lead.is-fading { opacity: 0; transition: opacity .6s; }
