@@ -1,61 +1,64 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Deryne Four – Portfolio</title>
-  <meta name="description" content="Portfolio de Deryne Four, ingénieure Unity & C# : génération procédurale, R&D, prototypage et game jams.">
+  <meta name="description" content="Portfolio of Deryne Four, Unity &amp; C# engineer: procedural generation, R&amp;D, rapid prototyping and game jams.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="alternate" hreflang="en" href="https://deryne.github.io/Portfolio/">
+  <link rel="alternate" hreflang="fr" href="https://deryne.github.io/Portfolio/fr/">
 </head>
 <body>
   <header class="nav">
     <a class="nav__logo" href="#top">DF</a>
     <nav>
-      <a href="projets.html">Projets</a>
-      <a href="#experience">Expérience</a>
-      <a href="#formation">Formation</a>
-      <a href="#loisirs">Loisirs</a>
+      <a href="projects.html">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#formation">Education</a>
+      <a href="#loisirs">Hobbies</a>
       <a href="#contact">Contact</a>
     </nav>
+        <a class="lang" href="fr/index.html" hreflang="fr" lang="fr" title="Version française">FR</a>
   </header>
 
   <div class="banner" id="top">
     <section class="hero">
       <div class="hero__top">
         <div>
-          <p class="eyebrow">Ingénieure Unity &amp; C#</p>
+          <p class="eyebrow">Unity &amp; C# Engineer</p>
           <h1>Deryne Four</h1>
-          <p class="hero__lead">Game developer en R&amp;D chez Gameloft Paris. Je conçois des outils Unity, de la génération procédurale et des prototypes rapides, et je participe à des game jams dès que je peux.</p>
+          <p class="hero__lead">R&amp;D game developer at Gameloft Paris. I build Unity tools, procedural generation systems and rapid prototypes, and I join game jams whenever I can.</p>
         </div>
-        <button class="flip" aria-label="Retourner la photo" aria-pressed="false">
+        <button class="flip" aria-label="Flip the photo" aria-pressed="false">
           <span class="flip__inner">
-            <img class="hero__photo flip__front" src="images/profil.png" alt="Photo de Deryne Four">
-            <img class="flip__back" src="images/profil-dessin.png" alt="Portrait dessiné de Deryne Four">
+            <img class="hero__photo flip__front" src="images/profil.png" alt="Photo of Deryne Four">
+            <img class="flip__back" src="images/profil-dessin.webp" alt="Drawn portrait of Deryne Four">
           </span>
         </button>
       </div>
       <div class="hero__links">
-        <a class="btn" href="projets.html">Voir les projets</a>
+        <a class="btn" href="projects.html">See my projects</a>
         <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/itchio.svg" alt=""> itch.io</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/linkedin.svg" alt=""> LinkedIn</a>
-        <a class="btn btn--ghost" href="CV_Deryne_Four.pdf" target="_blank">CV (PDF)</a>
+        <a class="btn btn--ghost" href="CV_Deryne_Four.pdf" target="_blank">Resume (PDF, French)</a>
       </div>
       <ul class="tags">
-        <li>C#</li><li>C++</li><li>Unity (confirmé)</li><li>Unreal</li>
-        <li>Génération procédurale</li><li>Architecture logicielle</li><li>Prototypage</li>
-        <li>IA générative &amp; MCP</li><li>Git · GitLab · Perforce</li>
+        <li>C#</li><li>C++</li><li>Unity (certified)</li><li>Unreal</li>
+        <li>Procedural generation</li><li>Software architecture</li><li>Prototyping</li>
+        <li>Generative AI &amp; MCP</li><li>Git · GitLab · Perforce</li>
       </ul>
-      <ul class="tools" aria-label="Outils">
+      <ul class="tools" aria-label="Tools">
         <li><img src="images/outils/unity.svg" alt=""> Unity</li>
         <li><img src="images/outils/unreal.svg" alt=""> Unreal</li>
         <li><img src="images/outils/csharp.svg" alt=""> C#</li>
         <li><img src="images/outils/cplusplus.svg" alt=""> C++</li>
         <li><img src="images/outils/vscode.svg" alt=""> VS Code</li>
         <li><img src="images/outils/claude.svg" alt=""> Claude</li>
-        <li><img src="images/outils/sourcetree.svg" alt=""> SourceTree</li>
+        <li><img src="images/outils/sourcetree.png" alt=""> SourceTree</li>
         <li><img src="images/outils/gitlab.svg" alt=""> GitLab</li>
       </ul>
     </section>
@@ -66,171 +69,171 @@
     <section id="projets" class="kiosk">
       <div class="kiosk__head">
         <div>
-          <h2>Projets</h2>
-          <p class="section-lead">Un aperçu de mes jeux, du plus récent au plus ancien.</p>
+          <h2>Projects</h2>
+          <p class="section-lead">A look at my games, from newest to oldest.</p>
         </div>
         <div class="kiosk__controls">
-          <button class="kiosk__prev" aria-label="Projets précédents">←</button>
-          <button class="kiosk__next" aria-label="Projets suivants">→</button>
+          <button class="kiosk__prev" aria-label="Previous projects">←</button>
+          <button class="kiosk__next" aria-label="Next projects">→</button>
         </div>
       </div>
 
       <div class="kiosk__track">
-        <a class="tile" href="projets.html#dragon-heist">
+        <a class="tile" href="projects.html#dragon-heist">
           <img src="images/projets/dragon-heist-2.webp" alt="" loading="lazy">
           <span class="tile__year">2026</span>
-          <span class="tile__body"><strong>Dragon Heist</strong><span>Braquage à 4 dans l'antre d'un dragon endormi</span><em>Unity · Démo Steam</em></span>
+          <span class="tile__body"><strong>Dragon Heist</strong><span>A 4-player heist in a sleeping dragon's lair</span><em>Unity · Steam demo</em></span>
         </a>
-        <a class="tile" href="projets.html#mask">
+        <a class="tile" href="projects.html#mask">
           <img src="https://i.ytimg.com/vi/B4GymNxbt9g/hqdefault.jpg" alt="" loading="lazy">
           <span class="tile__year">2026</span>
-          <span class="tile__body"><strong>Mask</strong><span>Récupérer les masques avant l'attaque au gaz</span><em>Unity · Global Game Jam</em></span>
+          <span class="tile__body"><strong>Mask</strong><span>Collect the masks before the gas attack</span><em>Unity · Global Game Jam</em></span>
         </a>
-        <a class="tile" href="projets.html#fly-me-to-the-room">
+        <a class="tile" href="projects.html#fly-me-to-the-room">
           <img src="https://i.ytimg.com/vi/cltRaqTl5Mg/hqdefault.jpg" alt="" loading="lazy">
           <span class="tile__year">2025</span>
-          <span class="tile__body"><strong>Fly me to the Room</strong><span>Une mouche et ses amies pour sortir de la pièce</span><em>Unreal C++ · Game jam</em></span>
+          <span class="tile__body"><strong>Fly me to the Room</strong><span>A fly and her friends escaping the room</span><em>Unreal C++ · Game jam</em></span>
         </a>
-        <a class="tile" href="projets.html#star-nebula">
+        <a class="tile" href="projects.html#star-nebula">
           <img src="images/projets/star-nebula-3.webp" alt="" loading="lazy">
           <span class="tile__year">2025</span>
-          <span class="tile__body"><strong>Star Nebula</strong><span>Combat spatial multijoueur</span><em>Unreal Blueprints · Game jam</em></span>
+          <span class="tile__body"><strong>Star Nebula</strong><span>Multiplayer space combat</span><em>Unreal Blueprints · Game jam</em></span>
         </a>
-        <a class="tile" href="projets.html#the-raven">
+        <a class="tile" href="projects.html#the-raven">
           <img src="https://i.ytimg.com/vi/gVHDz8_UDx8/hqdefault.jpg" alt="" loading="lazy">
           <span class="tile__year">2024</span>
-          <span class="tile__body"><strong>The Raven</strong><span>Un corbeau au service des tombes d'un cimetière</span><em>Unity · Solo</em></span>
+          <span class="tile__body"><strong>The Raven</strong><span>A raven serving the graves of a cemetery</span><em>Unity · Solo</em></span>
         </a>
-        <a class="tile" href="projets.html#mustang-runner">
+        <a class="tile" href="projects.html#mustang-runner">
           <img src="https://i.ytimg.com/vi/jNiAygSIh3o/hqdefault.jpg" alt="" loading="lazy">
           <span class="tile__year">2024</span>
-          <span class="tile__body"><strong>Mustang Runner</strong><span>Runner en C++ avec le mentorat d'Ubisoft Annecy</span><em>C++ · Develop@Ubisoft</em></span>
+          <span class="tile__body"><strong>Mustang Runner</strong><span>A C++ runner mentored by Ubisoft Annecy</span><em>C++ · Develop@Ubisoft</em></span>
         </a>
-        <a class="tile" href="projets.html#waterloose">
+        <a class="tile" href="projects.html#waterloose">
           <img src="images/projets/waterloose-2.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
-          <span class="tile__body"><strong>WaterLoose</strong><span>Batailles de bateaux en PvP et PvE</span><em>Unreal · Multijoueur</em></span>
+          <span class="tile__body"><strong>WaterLoose</strong><span>PvP and PvE naval battles</span><em>Unreal · Multiplayer</em></span>
         </a>
-        <a class="tile" href="projets.html#scales-and-forks">
+        <a class="tile" href="projects.html#scales-and-forks">
           <img src="images/projets/scales-titre.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
-          <span class="tile__body"><strong>Scales &amp; Forks</strong><span>Faire cohabiter un village et des dragons</span><em>Unity · Gestion</em></span>
+          <span class="tile__body"><strong>Scales &amp; Forks</strong><span>Helping villagers and dragons live together</span><em>Unity · Management</em></span>
         </a>
-        <a class="tile" href="projets.html#thalassa-rv">
+        <a class="tile" href="projects.html#thalassa-rv">
           <img src="images/projets/thalassa-1.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
-          <span class="tile__body"><strong>Thalassa RV</strong><span>La VR pour apaiser la thalassophobie</span><em>Unity · Réalité virtuelle</em></span>
+          <span class="tile__body"><strong>Thalassa VR</strong><span>VR to ease thalassophobia</span><em>Unity · Virtual reality</em></span>
         </a>
-        <a class="tile" href="projets.html#squirrel-vs-man">
+        <a class="tile" href="projects.html#squirrel-vs-man">
           <img src="images/projets/squirrel-3.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
-          <span class="tile__body"><strong>Squirrel VS Man</strong><span>Un écureuil contre les chasseurs de sa forêt</span><em>Unity · 3D</em></span>
+          <span class="tile__body"><strong>Squirrel VS Man</strong><span>A squirrel against the hunters in its forest</span><em>Unity · 3D</em></span>
         </a>
-        <a class="tile" href="projets.html#snow-memories">
+        <a class="tile" href="projects.html#snow-memories">
           <img src="https://i.ytimg.com/vi/BtSh83b8zgo/hqdefault.jpg" alt="" loading="lazy">
           <span class="tile__year">2023</span>
-          <span class="tile__body"><strong>Snow Memories</strong><span>Un petit jeu offert en cadeau d'anniversaire</span><em>Unity · Solo</em></span>
+          <span class="tile__body"><strong>Snow Memories</strong><span>A small game made as a birthday gift</span><em>Unity · Solo</em></span>
         </a>
-        <a class="tile" href="projets.html#tales-of-stars">
+        <a class="tile" href="projects.html#tales-of-stars">
           <img src="images/projets/tales-4.jpg" alt="" loading="lazy">
           <span class="tile__year">2023</span>
-          <span class="tile__body"><strong>Tales of Stars</strong><span>Constellations et légendes grecques en pixel art</span><em>Unity · Mobile</em></span>
+          <span class="tile__body"><strong>Tales of Stars</strong><span>Constellations and Greek myths in pixel art</span><em>Unity · Mobile</em></span>
         </a>
-        <a class="tile" href="projets.html#virtual-campus">
+        <a class="tile" href="projects.html#virtual-campus">
           <img src="images/projets/virtual-campus-2.png" alt="" loading="lazy">
           <span class="tile__year">2022</span>
-          <span class="tile__body"><strong>EPF Virtual Campus</strong><span>Le campus de l'école en ligne pendant le Covid</span><em>Unity · Photon</em></span>
+          <span class="tile__body"><strong>EPF Virtual Campus</strong><span>The school campus online during Covid</span><em>Unity · Photon</em></span>
         </a>
       </div>
 
-      <a class="btn kiosk__all" href="projets.html">Voir tous les projets →</a>
+      <a class="btn kiosk__all" href="projects.html">See all projects →</a>
     </section>
 
     <section id="experience">
-      <h2>Expérience</h2>
+      <h2>Experience</h2>
       <ol class="timeline">
         <li>
-          <h3 class="job"><img src="images/logos/gameloft.jpg" alt="Logo Gameloft Paris Studio"> Game Developer, CDI · Gameloft Paris, R&amp;D</h3>
-          <p class="meta">Depuis 2024 (plus de 2 ans)</p>
+          <h3 class="job"><img src="images/logos/gameloft.jpg" alt="Gameloft Paris Studio logo"> Game Developer, full-time · Gameloft Paris, R&amp;D</h3>
+          <p class="meta">Since 2024 (2+ years)</p>
           <ul>
-            <li>Outils Unity/C# qui accélèrent la production</li>
-            <li>Génération procédurale de contenu et architecture modulaire</li>
-            <li>POCs sur Unity et Unreal</li>
-            <li>Évaluation de solutions ML, IA générative et APIs pour le gameplay</li>
-            <li>Responsable de features majeures : code modulaire, testable et réutilisable</li>
+            <li>Unity/C# tools that speed up production</li>
+            <li>Procedural content generation and modular architecture</li>
+            <li>Proofs of concept in Unity and Unreal</li>
+            <li>Evaluating ML, generative AI and APIs for gameplay</li>
+            <li>Owner of major features: modular, testable and reusable code</li>
           </ul>
         </li>
         <li>
-          <h3 class="job"><img src="images/logos/ubisoft-annecy.jpg" alt="Logo Ubisoft Annecy"> Mentee Develop@Ubisoft · Ubisoft Annecy</h3>
-          <p class="meta">Oct. 2023 – Fév. 2024</p>
-          <p>Jeu individuel en C++, accompagné par deux mentors d'Ubisoft Annecy.</p>
+          <h3 class="job"><img src="images/logos/ubisoft-annecy.jpg" alt="Ubisoft Annecy logo"> Develop@Ubisoft Mentee · Ubisoft Annecy</h3>
+          <p class="meta">Oct. 2023 – Feb. 2024</p>
+          <p>Solo C++ game, mentored by two developers from Ubisoft Annecy.</p>
         </li>
         <li>
-          <h3 class="job"><img src="images/logos/gameloft.jpg" alt="Logo Gameloft Paris Studio"> Game Developer, stage · Gameloft Paris</h3>
-          <p class="meta">Sept. 2023 – Mars 2024 (6 mois)</p>
-          <p>Prototypes Unity/C# : évaluation du ML et de l'IA générative, code modulaire et réutilisable.</p>
+          <h3 class="job"><img src="images/logos/gameloft.jpg" alt="Gameloft Paris Studio logo"> Game Developer, internship · Gameloft Paris</h3>
+          <p class="meta">Sept. 2023 – March 2024 (6 months)</p>
+          <p>Unity/C# prototypes: evaluating ML and generative AI, with modular and reusable code.</p>
         </li>
       </ol>
     </section>
 
     <section id="formation">
-      <h2>Formation &amp; certifications</h2>
+      <h2>Education &amp; certifications</h2>
       <div class="grid grid--2">
         <article class="card card--logo">
-          <img src="images/logos/uqac.gif" alt="Logo UQAC">
+          <img src="images/logos/uqac.gif" alt="UQAC logo">
           <div>
-            <h3>Master 2 Informatique et Mathématiques, spécialité jeux vidéo</h3>
+            <h3>Master's in Computer Science and Mathematics, video game specialization</h3>
             <p class="meta">UQAC, Université du Québec à Chicoutimi</p>
-            <p>Conception de jeux, moteurs de jeux, mathématiques et physique pour le jeu vidéo, jeux sérieux.</p>
+            <p>Game design, game engines, mathematics and physics for games, serious games.</p>
           </div>
         </article>
         <article class="card card--logo">
-          <img src="images/logos/epf.jpg" alt="Logo EPF">
+          <img src="images/logos/epf.jpg" alt="EPF logo">
           <div>
-            <h3>Ingénieure généraliste, majeure Informatique et Numérique</h3>
+            <h3>General engineering degree, Computer Science and Digital major</h3>
             <p class="meta">EPF Cachan</p>
-            <p>Génie logiciel, intelligence artificielle, virtualisation.</p>
+            <p>Software engineering, artificial intelligence, virtualization.</p>
           </div>
         </article>
       </div>
       <ul class="certs">
-        <li><img src="images/logos/unity.png" alt="" class="certs__logo"> Unity Confirmed (Unity Technologies)</li>
-        <li>Certifications Claude AI d'Anthropic : Claude Code in Action, Intro to Agent Skills, Intro to Subagents</li>
-        <li><a href="https://courses.tomlooman.com/p/unrealengine-cpp" target="_blank" rel="noopener">Professional Game Dev in C++ &amp; Unreal Engine</a> de Tom Looman (ex-Stanford CS193U)</li>
+        <li><img src="images/logos/unity.png" alt="" class="certs__logo"> Unity Certified (Unity Technologies)</li>
+        <li>Anthropic Claude AI certifications: Claude Code in Action, Intro to Agent Skills, Intro to Subagents</li>
+        <li><a href="https://courses.tomlooman.com/p/unrealengine-cpp" target="_blank" rel="noopener">Professional Game Dev in C++ &amp; Unreal Engine</a> by Tom Looman (ex-Stanford CS193U)</li>
       </ul>
     </section>
 
     <section id="loisirs">
-      <h2>Loisirs</h2>
+      <h2>Hobbies</h2>
       <div class="hobbies">
         <figure>
-          <img src="images/loisirs/crochet.jpg" alt="Poules en crochet" loading="lazy">
+          <img src="images/loisirs/crochet.jpg" alt="Crocheted hens" loading="lazy">
           <figcaption>Crochet</figcaption>
         </figure>
         <figure>
-          <img src="images/loisirs/perles.webp" alt="Porte-clés poissons en perles" loading="lazy">
-          <figcaption>Tissage de perles</figcaption>
+          <img src="images/loisirs/perles.webp" alt="Beaded fish keychains" loading="lazy">
+          <figcaption>Bead weaving</figcaption>
         </figure>
         <figure>
-          <img src="images/loisirs/dessin.webp" alt="Dessin d'une femme ailée aux cheveux blonds, réalisé sur Procreate" loading="lazy">
-          <figcaption>Dessin numérique sur Procreate</figcaption>
+          <img src="images/loisirs/dessin.webp" alt="Drawing of a winged woman with blond hair, made in Procreate" loading="lazy">
+          <figcaption>Digital drawing in Procreate</figcaption>
         </figure>
         <figure>
-          <img src="images/loisirs/voile.jpg" alt="Deryne sur un catamaran" loading="lazy">
-          <figcaption>Voile et catamaran</figcaption>
+          <img src="images/loisirs/voile.jpg" alt="Deryne on a catamaran" loading="lazy">
+          <figcaption>Sailing and catamaran</figcaption>
         </figure>
       </div>
       <ul class="hobby-list">
-        <li><img src="images/logos/steam.webp" alt=""> Jeux vidéo : Baldur's Gate 3, Titanfall 2, Civilization 6</li>
-        <li><img src="images/logos/procreate.png" alt=""> Dessin numérique sur Procreate</li>
-        <li><span class="dot">⛵</span> Planche à voile et catamaran</li>
+        <li><img src="images/logos/steam.webp" alt=""> Video games: Baldur's Gate 3, Titanfall 2, Civilization 6</li>
+        <li><img src="images/logos/procreate.png" alt=""> Digital drawing in Procreate</li>
+        <li><span class="dot">⛵</span> Windsurfing and catamaran sailing</li>
         <li><span class="dot">🎮</span> Game jams</li>
       </ul>
     </section>
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>Envie d'échanger sur un projet ou un poste ? Écris-moi sur LinkedIn.</p>
+      <p>Want to talk about a project or a position? Message me on LinkedIn.</p>
       <div class="hero__links">
         <a class="btn" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/linkedin.svg" alt=""> LinkedIn</a>
         <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/itchio.svg" alt=""> itch.io</a>
@@ -240,7 +243,7 @@
 
   <footer>© Deryne Four</footer>
 
-  <dialog id="lightbox"><img alt=""><button aria-label="Fermer">×</button></dialog>
+  <dialog id="lightbox"><img alt=""><button aria-label="Close">×</button></dialog>
   <script src="main.js"></script>
 </body>
 </html>

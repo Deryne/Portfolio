@@ -307,8 +307,22 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transform: rotateY(180deg) scale(1.12);
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .45));
 }
-.flip:not(.is-flipped):hover .flip__inner { transform: rotateY(12deg); }
+.flip:not(.is-flipped):not(:disabled):hover .flip__inner { transform: rotateY(12deg); }
 
 /* Logos dans les boutons itch.io / LinkedIn */
 .btn:has(.btn__icon) { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; }
 .btn__icon { width: 20px; height: 20px; object-fit: contain; background: #fff; border-radius: 4px; padding: 2px; }
+
+/* Bouton de langue EN / FR */
+.nav a.lang {
+  color: var(--text); font-weight: 700; font-size: .82rem; letter-spacing: .05em;
+  border: 1px solid var(--surface-2); border-radius: 999px; padding: .1rem .6rem;
+}
+.nav a.lang:hover { border-color: var(--accent); color: var(--accent); }
+.nav { gap: 1rem; }
+.nav__logo { margin-right: auto; }
+.nav a.lang { text-decoration: none; }
+@media (max-width: 640px) {
+  .nav a.lang { order: 1; }
+  .nav nav { order: 2; }
+}

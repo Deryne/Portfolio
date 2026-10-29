@@ -65,3 +65,8 @@ document.querySelectorAll('.flip').forEach(flip => {
     flip.setAttribute('aria-pressed', on);
   });
 });
+
+// Changement de langue : garder la section ou le projet affiché
+document.querySelectorAll('a.lang').forEach(a => {
+  a.addEventListener('click', () => { if (location.hash) a.href = a.href.split('#')[0] + location.hash; });
+});

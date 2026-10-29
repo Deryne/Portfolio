@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects – Deryne Four</title>
+  <meta name="description" content="All of Deryne Four's projects: Unity and Unreal games, game jams, VR and school projects, with videos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="alternate" hreflang="en" href="https://deryne.github.io/Portfolio/projects.html">
+  <link rel="alternate" hreflang="fr" href="https://deryne.github.io/Portfolio/fr/projets.html">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__logo" href="index.html">DF</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#formation">Education</a>
+      <a href="index.html#loisirs">Hobbies</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+        <a class="lang" href="fr/projets.html" hreflang="fr" lang="fr" title="Version française">FR</a>
+  </header>
+
+  <div class="banner banner--small" id="top">
+    <section class="hero">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Projects</h1>
+      <p class="hero__lead">Unity and Unreal games, game jams, virtual reality and school projects, from newest to oldest.</p>
+    </section>
+  </div>
+
+  <main>
+    <section id="projets">
+      <div class="filters" role="group" aria-label="Filter by engine">
+        <button class="filter is-active" data-filter="all" aria-pressed="true">All <span class="filter__count"></span></button>
+        <button class="filter" data-filter="unity" aria-pressed="false"><img src="images/outils/unity.svg" alt=""> Unity <span class="filter__count"></span></button>
+        <button class="filter" data-filter="unreal" aria-pressed="false"><img src="images/outils/unreal.svg" alt=""> Unreal <span class="filter__count"></span></button>
+        <button class="filter" data-filter="cpp" aria-pressed="false"><img src="images/outils/cplusplus.svg" alt=""> C++ <span class="filter__count"></span></button>
+      </div>
+      <p class="section-lead">Click a video to play it, or a thumbnail to enlarge it.</p>
+
+      <article class="project" id="dragon-heist" data-engine="unity">
+        <button class="video" data-yt="eHa63hYSk3M" aria-label="Play the Dragon Heist video"></button>
+        <div class="project__body">
+          <p class="year">2026</p>
+          <h3>Dragon Heist</h3>
+          <p class="meta">Unity C# · Wwise · Demo released on Steam</p>
+          <p class="desc">Sneak into a castle guarded by a sleeping dragon with up to 4 players, grab as much gold and treasure as you can, and escape before the dragon wakes up.</p>
+          <a class="link link--steam" href="https://store.steampowered.com/app/5049260/Dragon_Heist/" target="_blank" rel="noopener"><img src="images/logos/steam.webp" alt=""> View on Steam →</a>
+          <div class="thumbs">
+            <img src="images/projets/dragon-heist-1.webp" alt="Knight in the city streets" loading="lazy">
+            <img src="images/projets/dragon-heist-2.webp" alt="Dragon on its treasure" loading="lazy">
+            <img src="images/projets/dragon-heist-3.webp" alt="Selecting the character Torquil" loading="lazy">
+            <img src="images/projets/dragon-heist-4.webp" alt="Knight facing the dragon" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="mask" data-engine="unity">
+        <button class="video" data-yt="B4GymNxbt9g" aria-label="Play the Mask video"></button>
+        <div class="project__body">
+          <p class="year">2026</p>
+          <h3>Mask</h3>
+          <p class="meta">Unity C# · Global Game Jam 2026 · 48 h · Team of 3</p>
+          <p class="desc">The jam theme was "Mask". You play a World War I soldier who must collect masks before a mustard gas attack reaches the trench.</p>
+          <p class="role">Gameplay · UI · Cutscenes</p>
+          <a class="link" href="https://chevrubis.itch.io/mask-arya-operation" target="_blank" rel="noopener">itch.io →</a>
+        </div>
+      </article>
+
+      <article class="project" id="fly-me-to-the-room" data-engine="unreal">
+        <button class="video" data-yt="cltRaqTl5Mg" aria-label="Play the Fly me to the Room video"></button>
+        <div class="project__body">
+          <p class="year">2025</p>
+          <h3>Fly me to the Room</h3>
+          <p class="meta">Unreal C++ · DTJ Game Jam · 36 h · Team of 3</p>
+          <p class="desc">Play a fly who needs her friends to get out of the room. The jam theme was "One room".</p>
+          <p class="role">Gameplay · Physics · QTE</p>
+          <a class="link" href="https://vraus.itch.io/fly-me-to-the-room" target="_blank" rel="noopener">itch.io →</a>
+        </div>
+      </article>
+
+      <article class="project" id="star-nebula" data-engine="unreal">
+        <button class="video" data-yt="vIRRODfAk0g" aria-label="Play the Star Nebula video"></button>
+        <div class="project__body">
+          <p class="year">2025</p>
+          <h3>Star Nebula</h3>
+          <p class="meta">Unreal Blueprints · One-week game jam · Team of 5</p>
+          <p class="desc">Multiplayer space combat: each player picks a ship, then sets out to destroy the turrets of a space station in the middle of an asteroid field.</p>
+          <div class="thumbs">
+            <img src="images/projets/star-nebula-1.webp" alt="Ship selection menu" loading="lazy">
+            <img src="images/projets/star-nebula-2.webp" alt="Attacking a space station" loading="lazy">
+            <img src="images/projets/star-nebula-3.webp" alt="Ship in front of the Earth and asteroids" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="the-raven" data-engine="unity">
+        <button class="video" data-yt="gVHDz8_UDx8" aria-label="Play the The Raven video"></button>
+        <div class="project__body">
+          <p class="year">2024</p>
+          <h3>The Raven</h3>
+          <p class="meta">Unity C# · Solo · Birthday gift</p>
+          <p class="desc">You play a raven trapped in a cemetery, doomed to obey the last wishes of the statues and graves.</p>
+        </div>
+      </article>
+
+      <article class="project" id="mustang-runner" data-engine="cpp">
+        <button class="video" data-yt="jNiAygSIh3o" aria-label="Play the Mustang Runner video"></button>
+        <div class="project__body">
+          <p class="year">2024</p>
+          <h3>Mustang Runner</h3>
+          <p class="meta">C++ · Develop@Ubisoft, mentored by Ubisoft Annecy</p>
+          <p class="desc">A runner built in C++ during the Develop@Ubisoft program, mentored by two developers from Ubisoft Annecy.</p>
+          <p class="role">Gameplay · UI · Pooling</p>
+        </div>
+      </article>
+
+      <article class="project" id="waterloose" data-engine="unreal">
+        <button class="video" data-yt="ufqxh2Q9vwQ" aria-label="Play the WaterLoose video"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>WaterLoose</h3>
+          <p class="meta">Unreal C++ &amp; Blueprints · UQAC · Team of 6</p>
+          <p class="desc">A PvP and PvE multiplayer boat game made in two months. Teams fight on a closed map full of monsters and treasure. Goal: destroy the enemy port.</p>
+          <p class="role">Level Design · Gameplay · UI</p>
+          <div class="thumbs">
+            <img src="images/projets/waterloose-1.webp" alt="Red ship near the enemy port" loading="lazy">
+            <img src="images/projets/waterloose-2.webp" alt="Red and blue ships facing a sea monster, with power-ups" loading="lazy">
+            <img src="images/projets/waterloose-3.webp" alt="Two ships fighting" loading="lazy">
+            <img src="images/projets/waterloose-4.png" alt="Ships and a sea monster seen from above" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="scales-and-forks" data-engine="unity">
+        <button class="video" data-yt="wqnSLnF5Rcc" aria-label="Play the Scales &amp; Forks video"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>Scales &amp; Forks</h3>
+          <p class="meta">Unity C# · Management game · UQAC</p>
+          <p class="desc">A management game where you run a village whose people and dragons try to live together: happiness and resource management, building construction.</p>
+          <p class="role">Game Design · Gameplay · UI</p>
+          <a class="link" href="https://chevrubis.itch.io/scales-forks" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/scales-titre.webp" alt="Scales &amp; Forks title over a view of the village" loading="lazy">
+            <img src="images/projets/scales-3.webp" alt="Farms built along the river" loading="lazy">
+            <img src="images/projets/scales-4.webp" alt="Villagers around a farm" loading="lazy">
+            <img src="images/projets/scales-1.png" alt="Village farm and resources seen from above" loading="lazy">
+            <img src="images/projets/scales-2.png" alt="Resources to gather at the foot of the cliffs" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="thalassa-rv" data-engine="unity">
+        <button class="video" data-yt="MAafIw4F0PQ" aria-label="Play the Thalassa VR video"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>Thalassa VR</h3>
+          <p class="meta">Unity C# · Virtual reality (Oculus) · UQAC</p>
+          <p class="desc">A virtual reality project to reassure people who suffer from thalassophobia.</p>
+          <p class="role">Gameplay · UI · Level Design</p>
+          <a class="link" href="https://chevrubis.itch.io/thalassa-rv" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/thalassa-1.webp" alt="Sandy seabed with fish and coral" loading="lazy">
+            <img src="images/projets/thalassa-2.webp" alt="Colorful coral reef" loading="lazy">
+            <img src="images/projets/thalassa-3.webp" alt="Large table corals in turquoise water" loading="lazy">
+            <img src="images/projets/thalassa-4.webp" alt="Looking down at the seabed and a diving cage" loading="lazy">
+            <img src="images/projets/thalassa-5.webp" alt="Diving cage among the corals" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="squirrel-vs-man" data-engine="unity">
+        <button class="video" data-yt="RU5ATIRwp10" aria-label="Play the Squirrel VS Man video"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>Squirrel VS Man</h3>
+          <p class="meta">Unity C# · 3D game · UQAC · Team of 5</p>
+          <p class="desc">You play a squirrel who wants to drive the hunters out of its forest. Too small to attack the humans directly, it follows the advice of the other animals, who tell it about fire… A lighthearted game that might make you smile!</p>
+          <p class="role">Game Design · Gameplay · Project lead</p>
+          <a class="link" href="https://chevrubis.itch.io/squirrel-vs-man" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/squirrel-cover.png" alt="Squirrel VS Man logo" loading="lazy">
+            <img src="images/projets/squirrel-1.webp" alt="Title screen with the squirrel and the hunters" loading="lazy">
+            <img src="images/projets/squirrel-2.png" alt="The squirrel crossing a clearing" loading="lazy">
+            <img src="images/projets/squirrel-3.webp" alt="The squirrel in front of the burning forest" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="snow-memories" data-engine="unity">
+        <button class="video" data-yt="BtSh83b8zgo" aria-label="Play the Snow Memories video"></button>
+        <div class="project__body">
+          <p class="year">2023</p>
+          <h3>Snow Memories</h3>
+          <p class="meta">Unity C# · Solo</p>
+          <p class="desc">A small game I made on my own as a birthday gift.</p>
+        </div>
+      </article>
+
+      <article class="project" id="tales-of-stars" data-engine="unity">
+        <button class="video" data-yt="1OfIG6QMp6U" aria-label="Play the Tales of Stars video"></button>
+        <div class="project__body">
+          <p class="year">2023</p>
+          <h3>Tales of Stars</h3>
+          <p class="meta">Unity C# · Educational platformer for Android · EPF</p>
+          <p class="desc">A pixel-art mobile platformer where you find the stars of constellations and learn their Greek myths, with a mini-game to connect the stars.</p>
+          <p class="role">Gameplay · UI · Art · Project lead</p>
+          <a class="link" href="https://chevrubis.itch.io/tales-of-stars" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/tales-2.jpg" alt="Tales of Stars title screen" loading="lazy">
+            <img src="images/projets/tales-4.jpg" alt="The Swan level" loading="lazy">
+            <img src="images/projets/tales-5.jpg" alt="Controls tutorial" loading="lazy">
+            <img src="images/projets/tales-3.jpg" alt="Northern Crown mini-game" loading="lazy">
+            <img src="images/projets/tales-1.jpg" alt="Dialogue about the Lyra constellation" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project" id="virtual-campus" data-engine="unity">
+        <button class="video" data-yt="bChaX3UtrPw" aria-label="Play the Virtual Campus video"></button>
+        <div class="project__body">
+          <p class="year">2022</p>
+          <h3>EPF Virtual Campus</h3>
+          <p class="meta">Unity C# · Photon · Multiplayer · EPF</p>
+          <p class="desc">A multiplayer initiative that recreated the school campus to welcome students online during Covid.</p>
+          <p class="role">Project lead</p>
+          <div class="thumbs">
+            <img src="images/projets/epf-virtual-campus.png" alt="EPF Virtual Campus logo" loading="lazy">
+            <img src="images/projets/virtual-campus-1.png" alt="Creating the astronaut avatar" loading="lazy">
+            <img src="images/projets/virtual-campus-2.png" alt="Students on the virtual campus" loading="lazy">
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>© Deryne Four</footer>
+
+  <dialog id="lightbox"><img alt=""><button aria-label="Close">×</button></dialog>
+  <script src="main.js"></script>
+</body>
+</html>
