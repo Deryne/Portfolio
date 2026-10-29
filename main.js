@@ -1,15 +1,83 @@
 const box = document.getElementById('lightbox');
 
+// Lecteur vidéo maison : la vidéo YouTube est recadrée pour cacher le titre, la chaîne et le logo,
+// et on n'affiche qu'une barre de lecture à nous.
+let ytReady;
+const loadYouTube = () => ytReady ??= new Promise(resolve => {
+  window.onYouTubeIframeAPIReady = resolve;
+  const s = document.createElement('script');
+  s.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(s);
+});
+const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+
 document.querySelectorAll('.video').forEach(btn => {
   const id = btn.dataset.yt;
-  btn.style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;
-  btn.addEventListener('click', () => {
-    const frame = document.createElement('iframe');
-    frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
-    frame.title = btn.getAttribute('aria-label');
-    frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-    frame.className = 'video';
-    btn.replaceWith(frame);
+  const poster = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;
+  btn.style.backgroundImage = poster;
+  btn.addEventListener('click', async () => {
+    const lang = document.documentElement.lang === 'fr';
+    const box = document.createElement('div');
+    box.className = 'player is-loading';
+    box.innerHTML = `
+      <div class="player__frame"><div></div></div>
+      <button class="player__cover" aria-label="${lang ? 'Lecture / pause' : 'Play / pause'}"></button>
+      <div class="player__bar">
+        <span class="player__time">0:00</span>
+        <div class="player__track" role="slider" aria-label="${lang ? 'Position dans la vidéo' : 'Video position'}" tabindex="0">
+          <div class="player__fill"></div>
+        </div>
+        <span class="player__time player__time--total">0:00</span>
+      </div>`;
+    box.style.setProperty('--poster', poster);
+    btn.replaceWith(box);
+    await loadYouTube();
+
+    const cover = box.querySelector('.player__cover');
+    const track = box.querySelector('.player__track');
+    const fill = box.querySelector('.player__fill');
+    const [now, total] = box.querySelectorAll('.player__time');
+    let player, raf;
+    const tick = () => {
+      const d = player.getDuration() || 0, t = player.getCurrentTime() || 0;
+      fill.style.width = d ? (t / d * 100) + '%' : '0';
+      now.textContent = fmt(t); total.textContent = fmt(d);
+      track.setAttribute('aria-valuenow', Math.round(t));
+      raf = requestAnimationFrame(tick);
+    };
+    player = new YT.Player(box.querySelector('.player__frame div'), {
+      videoId: id,
+      host: 'https://www.youtube-nocookie.com',
+      playerVars: { autoplay: 1, controls: 0, rel: 0, iv_load_policy: 3, playsinline: 1, disablekb: 1, fs: 0 },
+      events: {
+        onReady: e => { e.target.playVideo(); tick(); },
+        onStateChange: e => {
+          // en pause ou à la fin, on remet l'affiche par-dessus pour cacher l'écran « Plus de vidéos »
+          box.classList.toggle('is-playing', e.data === YT.PlayerState.PLAYING);
+          box.classList.toggle('is-paused', e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED);
+          if (e.data === YT.PlayerState.PLAYING) box.classList.remove('is-loading');
+        },
+      },
+    });
+    cover.addEventListener('click', () => {
+      if (!player.getPlayerState) return;
+      player.getPlayerState() === YT.PlayerState.PLAYING ? player.pauseVideo() : player.playVideo();
+    });
+    const seek = e => {
+      const r = track.getBoundingClientRect();
+      player.seekTo(Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * player.getDuration(), true);
+    };
+    track.addEventListener('pointerdown', e => {
+      seek(e);
+      const move = ev => seek(ev);
+      track.setPointerCapture(e.pointerId);
+      track.addEventListener('pointermove', move);
+      track.addEventListener('pointerup', () => track.removeEventListener('pointermove', move), { once: true });
+    });
+    track.addEventListener('keydown', e => {
+      const step = e.key === 'ArrowRight' ? 5 : e.key === 'ArrowLeft' ? -5 : 0;
+      if (step) player.seekTo(player.getCurrentTime() + step, true);
+    });
   });
 });
 
