@@ -652,3 +652,31 @@ footer { border-top-color: var(--hairline); }
 .project.is-light .meta { color: #1f7f72; }
 .year { background: rgba(217, 180, 90, .15); color: var(--gold); }
 .project.is-light .year { background: #e6d6b4; color: #8a4a12; }
+
+/* Carte de loisir agrandie */
+.card-zoom { border: 0; padding: 0; background: none; overflow: visible; max-width: none; max-height: none; }
+.card-zoom::backdrop { background: rgba(8, 14, 13, .85); backdrop-filter: blur(3px); }
+.card-zoom__holder {
+  width: calc(180px * var(--k)); height: calc(252px * var(--k));
+  display: grid; place-items: center;
+}
+.card-zoom .hcard {
+  width: 180px; transform: scale(var(--k)); transform-origin: center;
+  animation: zoom-in .35s cubic-bezier(.2, .8, .3, 1.1);
+}
+@keyframes zoom-in { from { opacity: 0; transform: scale(calc(var(--k) * .7)); } }
+.card-zoom .hcard { position: relative; top: auto; right: auto; font-size: 1rem; color: #fff; cursor: zoom-out; }
+
+/* Parallaxe des cartes de loisirs sur ordinateur : l'image glisse derrière le titre et le texte */
+@media (hover: hover) and (pointer: fine) {
+  .hcard { --px: 0; --py: 0; }
+  .hcard__art img, .hcard__top, .hcard__text { transition: transform .25s ease-out; will-change: transform; }
+  .hcard.is-open .hcard__art img {
+    transform: scale(1.1) translate(calc(var(--px) * -14px), calc(var(--py) * -14px));
+  }
+  .hcard.is-open .hcard__top  { transform: translate(calc(var(--px) * 7px), calc(var(--py) * 5px)); }
+  .hcard.is-open .hcard__text { transform: translate(calc(var(--px) * 10px), calc(var(--py) * 8px)); }
+  .hcard.is-open:hover .hcard__inner { transition: transform .15s ease-out; }
+}
+.hcard__art { position: absolute; inset: 3px; overflow: hidden; border-radius: 13px; }
+.hcard__front .hcard__art img { inset: 0; width: 100%; height: 100%; border-radius: 0; }

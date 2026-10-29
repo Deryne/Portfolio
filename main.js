@@ -244,6 +244,14 @@ document.querySelectorAll('a.lang').forEach(a => {
   const grid = document.querySelector('.cards');
   if (!grid) return;
   const cards = [...grid.querySelectorAll('.hcard')];
+  // l'illustration est placée dans un cadre qui la découpe, pour pouvoir la faire glisser (parallaxe)
+  cards.forEach(c => {
+    const img = c.querySelector('.hcard__front img');
+    const art = document.createElement('span');
+    art.className = 'hcard__art';
+    img.before(art);
+    art.appendChild(img);
+  });
   const lead = grid.previousElementSibling?.classList.contains('section-lead') ? grid.previousElementSibling : null;
   const fr = document.documentElement.lang === 'fr';
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -316,15 +324,8 @@ document.querySelectorAll('a.lang').forEach(a => {
   });
 
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      if (!card.classList.contains('is-open')) return;
-      const img = card.querySelector('img');              // carte ouverte : on agrandit la photo
-      box.querySelector('img').src = img.src;
-      box.querySelector('img').alt = img.alt;
-      box.showModal();
-    });
-    // reflet holographique qui suit la souris
+  // reflet holographique qui suit la souris
+  const holo = card => {
     card.addEventListener('pointermove', e => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
@@ -332,10 +333,39 @@ document.querySelectorAll('a.lang').forEach(a => {
       card.style.setProperty('--my', y * 100 + '%');
       card.style.setProperty('--rx', (y - .5) * -10 + 'deg');
       card.style.setProperty('--ry', (x - .5) * 12 + 'deg');
+      card.style.setProperty('--px', (x - .5).toFixed(3));   // pour l'effet de profondeur (parallaxe)
+      card.style.setProperty('--py', (y - .5).toFixed(3));
     });
     card.addEventListener('pointerleave', () => {
-      card.style.setProperty('--rx', '0deg');
-      card.style.setProperty('--ry', '0deg');
+      ['--rx', '--ry'].forEach(p => card.style.setProperty(p, '0deg'));
+      ['--px', '--py'].forEach(p => card.style.setProperty(p, '0'));
     });
+  };
+
+  // carte ouverte : on l'affiche en grand, avec son cadre et ses effets
+  const zoom = document.createElement('dialog');
+  zoom.className = 'card-zoom';
+  zoom.setAttribute('aria-label', fr ? 'Carte agrandie' : 'Enlarged card');
+  document.body.appendChild(zoom);
+  zoom.addEventListener('click', () => zoom.close());
+
+  const BASE = 180;                                     // largeur de la carte avant agrandissement
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      if (!card.classList.contains('is-open')) return;
+      const big = card.cloneNode(true);
+      big.classList.remove('is-revealing', 'is-dealt');
+      big.removeAttribute('aria-label');
+      big.tabIndex = -1;
+      big.style.cssText = '';
+      const holder = document.createElement('div');
+      holder.className = 'card-zoom__holder';
+      holder.style.setProperty('--k', Math.min(innerWidth * .9, innerHeight * .88 * 5 / 7) / BASE);
+      holder.appendChild(big);
+      zoom.replaceChildren(holder);
+      holo(big);
+      zoom.showModal();
+    });
+    holo(card);
   });
 })();

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deryne Four – Resume</title>
+  <meta name="description" content="Resume of Deryne Four, Unity &amp; C# engineer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Federo&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #1d2726; --muted: #55605d; --accent: #b8660f; --teal: #1f7f72; --line: #d9b45a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #2a3b39; color: var(--ink); font: 10.2pt/1.42 Inter, Arial, sans-serif; }
+    .toolbar { display: flex; justify-content: center; gap: .6rem; padding: 1rem; }
+    .toolbar a, .toolbar button {
+      font: 600 .9rem Inter, sans-serif; padding: .5rem 1rem; border-radius: 999px; cursor: pointer; text-decoration: none;
+      border: 1px solid #d9b45a; background: #e89a3c; color: #2a1503;
+    }
+    .toolbar a { background: transparent; color: #f3ead7; }
+    .page {
+      width: 210mm; min-height: 297mm; margin: 0 auto 2rem; padding: 14mm 15mm;
+      background: #fffdf8; box-shadow: 0 10px 40px rgba(0, 0, 0, .4);
+    }
+    header { border-bottom: 2px solid var(--line); padding-bottom: 6px; margin-bottom: 10px; }
+    h1 { font: 400 22pt/1.1 Federo, Georgia, serif; margin: 0; }
+    h1 span { color: var(--accent); font-size: 14pt; }
+    .contact { color: var(--muted); margin-top: 4px; }
+    a { color: var(--teal); }
+    h2 {
+      font: 400 12pt Federo, Georgia, serif; letter-spacing: .08em; color: var(--accent);
+      margin: 12px 0 4px; padding-bottom: 2px; border-bottom: 1px solid #ecdcb4;
+    }
+    h3 { font-size: 10.4pt; margin: 6px 0 1px; }
+    h3 small { font-weight: 400; color: var(--muted); }
+    ul { margin: 2px 0 4px; padding-left: 16px; }
+    li { margin: 1px 0; }
+    p { margin: 2px 0; }
+    .grid { display: grid; grid-template-columns: max-content 1fr; gap: 1px 10px; }
+    .grid b { color: var(--ink); }
+    .projects li { margin: 2px 0; }
+    @media print {
+      @page { size: A4; margin: 0; }
+      body { background: none; }
+      .toolbar { display: none; }
+      .page { margin: 0; box-shadow: none; }
+    }
+    @media (max-width: 820px) {
+      .page { width: auto; min-height: 0; margin: 0 .5rem 1rem; padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a href="index.html">← Portfolio</a>
+    <button onclick="print()">Save as PDF / Print</button>
+    <a href="CV_Deryne_Four.pdf" target="_blank">French version (PDF)</a>
+  </div>
+
+  <main class="page">
+    <header>
+      <h1>Deryne FOUR <span>– Unity &amp; C# Engineer</span></h1>
+      <p class="contact">
+        LinkedIn: <a href="https://www.linkedin.com/in/deryne-four/">linkedin.com/in/deryne-four</a> |
+        Portfolio: <a href="https://deryne.github.io/Portfolio/">deryne.github.io/Portfolio</a>
+      </p>
+    </header>
+
+    <h2>SKILLS</h2>
+    <div class="grid">
+      <b>Languages</b><span>C#, C++</span>
+      <b>Engines</b><span>Unity (certified), Unreal</span>
+      <b>Specialties</b><span>Procedural generation, software architecture, R&amp;D and rapid prototyping</span>
+      <b>AI &amp; tools</b><span>Generative AI and MCP (Claude, Copilot, LLMs)</span>
+      <b>Version control</b><span>GitLab, SourceTree, Git, Perforce</span>
+      <b>Languages spoken</b><span>French (native), English (fluent, professional setting)</span>
+    </div>
+
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+    <h3>Game Developer – Full-time (2+ years) <small>– Gameloft Paris, R&amp;D Department</small></h3>
+    <ul>
+      <li>Developed and optimized Unity/C# tools that speed up production</li>
+      <li>Specialized in procedural content generation and modular architecture</li>
+      <li>Built proofs of concept in Unity and Unreal</li>
+      <li>Evaluated ML, generative AI and API solutions applicable to gameplay</li>
+      <li>Owned major features: modular, testable and reusable code</li>
+    </ul>
+    <h3>Develop@Ubisoft Mentee <small>– Ubisoft Annecy, Oct. 2023 – Feb. 2024</small></h3>
+    <ul><li>Solo C++ game project, mentored by two Ubisoft Annecy developers</li></ul>
+    <h3>Game Developer Intern (6 months) <small>– Gameloft Paris, Sept. 2023 – March 2024</small></h3>
+    <ul><li>Unity/C# prototypes: evaluating ML and generative AI, modular and reusable code</li></ul>
+
+    <h2>EDUCATION</h2>
+    <h3>Master's in Computer Science and Mathematics, video game specialization <small>– UQAC, Université du Québec à Chicoutimi</small></h3>
+    <ul><li>Video game design, game engines, mathematics and physics for games, serious games</li></ul>
+    <h3>General Engineering Degree – Computer Science and Digital major <small>– EPF Cachan</small></h3>
+    <ul><li>Software engineering, artificial intelligence, virtualization</li></ul>
+
+    <h2>CERTIFICATIONS</h2>
+    <ul>
+      <li>Unity Certified (Unity Technologies)</li>
+      <li>Claude AI certifications, Anthropic (Claude Code in Action, Intro to Agent Skills, Intro to Subagents)</li>
+      <li><a href="https://courses.tomlooman.com/p/unrealengine-cpp">Professional Game Dev in C++ &amp; Unreal Engine</a> – Tom Looman (ex-Stanford CS193U)</li>
+    </ul>
+
+    <h2>PORTFOLIO – PROJECTS</h2>
+    <ul class="projects">
+      <li><b>Mask</b> (Unity C#, Global Game Jam 2026, 48h) – Gameplay, UI, Cutscenes – <a href="https://chevrubis.itch.io/mask-arya-operation">link</a></li>
+      <li><b>Fly me to the Room</b> (Unreal, DTJ Game Jam, 36h) – Gameplay, Physics, QTE – <a href="https://vraus.itch.io/fly-me-to-the-room">link</a></li>
+      <li><b>Mustang Runner</b> (C++, Ubisoft mentorship 2023 – runner) – Gameplay, UI, Pooling</li>
+      <li><b>WaterLoose</b> (Unreal, 5th year – multiplayer boat game) – Level Design, Gameplay, UI</li>
+      <li><b>Thalassa VR</b> (Unity 3D, therapeutic VR, Oculus) – Gameplay, UI, Level Design – <a href="https://chevrubis.itch.io/thalassa-rv">link</a></li>
+      <li><b>Scales &amp; Forks</b> (Unity 3D, 5th year – city builder) – Game Design, Gameplay, UI – <a href="https://chevrubis.itch.io/scales-forks">link</a></li>
+      <li><b>Squirrel VS Man</b> (Unity 3D, 5th year – RPG/FPS hybrid) – Game Design, Gameplay, Project lead – <a href="https://chevrubis.itch.io/squirrel-vs-man">link</a></li>
+      <li><b>Tales of Stars</b> (Unity 2D, 4th year – educational platformer) – Gameplay, UI, Art, Project lead – <a href="https://chevrubis.itch.io/tales-of-stars">link</a></li>
+    </ul>
+
+    <h2>HOBBIES</h2>
+    <p>Video games (Baldur's Gate 3, Titanfall 2, Civilization 6), crochet and crafts, digital drawing (Procreate), windsurfing / catamaran sailing, game jams.</p>
+  </main>
+</body>
+</html>
