@@ -28,6 +28,10 @@ document.querySelectorAll('.video').forEach(btn => {
           <div class="player__fill"></div>
         </div>
         <span class="player__time player__time--total">0:00</span>
+        <a class="player__yt" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener"
+           title="${lang ? 'Regarder sur YouTube' : 'Watch on YouTube'}" aria-label="${lang ? 'Regarder sur YouTube' : 'Watch on YouTube'}">
+          <svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#ff0033"/><path d="M11 5.5v9l7.5-4.5z" fill="#fff"/></svg>
+        </a>
       </div>`;
     box.style.setProperty('--poster', poster);
     btn.replaceWith(box);
@@ -62,6 +66,12 @@ document.querySelectorAll('.video').forEach(btn => {
     cover.addEventListener('click', () => {
       if (!player.getPlayerState) return;
       player.getPlayerState() === YT.PlayerState.PLAYING ? player.pauseVideo() : player.playVideo();
+    });
+    // basculer sur YouTube : on reprend au même moment et on met la vidéo d'ici en pause
+    box.querySelector('.player__yt').addEventListener('click', e => {
+      if (!player.getCurrentTime) return;
+      e.currentTarget.href = `https://www.youtube.com/watch?v=${id}&t=${Math.floor(player.getCurrentTime())}s`;
+      player.pauseVideo();
     });
     const seek = e => {
       const r = track.getBoundingClientRect();
@@ -251,6 +261,12 @@ document.querySelectorAll('a.lang').forEach(a => {
     b.addEventListener('animationend', () => b.remove());
   };
 
+  // position de la souris, que les poissons évitent
+  const FLEE = 140;                                            // rayon d'évitement en pixels
+  const mouse = { x: -9999, y: -9999 };
+  addEventListener('pointermove', e => { if (e.pointerType === 'mouse') { mouse.x = e.clientX; mouse.y = e.clientY; } }, { passive: true });
+  document.addEventListener('pointerleave', () => { mouse.x = mouse.y = -9999; });
+
   const school = () => {
     const ltr = Math.random() < .5;                            // sens de passage
     const count = 12 + Math.floor(Math.random() * 9);          // 12 à 20 poissons
@@ -267,6 +283,7 @@ document.querySelectorAll('a.lang').forEach(a => {
         phase: Math.random() * Math.PI * 2,
         scale: .65 + Math.random() * .45,
         x: 0, y: 0,
+        dx: 0, dy: 0,                                          // écart dû à la souris
       };
     });
     const start = performance.now();
@@ -277,8 +294,21 @@ document.querySelectorAll('a.lang').forEach(a => {
       let alive = false;
       fish.forEach(f => {
         const pos = d - f.offX - 80;
-        f.x = ltr ? pos : innerWidth - pos - W;
-        f.y = baseY + f.offY + Math.sin(t * 4 + f.phase) * 6;
+        const baseX = ltr ? pos : innerWidth - pos - W;
+        const y0 = baseY + f.offY + Math.sin(t * 4 + f.phase) * 6;
+        // les poissons s'écartent de la souris, puis reprennent doucement leur place
+        let tx = 0, ty = 0;
+        const vx = baseX + W / 2 - mouse.x, vy = y0 + H / 2 - mouse.y, dist = Math.hypot(vx, vy);
+        if (dist < FLEE) {
+          // ils plongent au-dessus ou en dessous de la souris, selon le côté où ils se trouvent
+          const push = Math.sqrt(1 - dist / FLEE) * 95;
+          const side = Math.abs(vy) > 2 ? Math.sign(vy) : (f.phase > Math.PI ? 1 : -1);
+          ty = side * push;
+          tx = dist > 0 ? vx / dist * push * .25 : 0;
+        }
+        f.dx += (tx - f.dx) * .3; f.dy += (ty - f.dy) * .3;
+        f.x = baseX + f.dx;
+        f.y = y0 + f.dy;
         f.el.style.transform = `translate(${f.x}px, ${f.y}px) scale(${ltr ? f.scale : -f.scale}, ${f.scale})`;
         if (pos < travel) alive = true;
       });
@@ -293,8 +323,8 @@ document.querySelectorAll('a.lang').forEach(a => {
     requestAnimationFrame(move);
   };
 
-  // un premier banc peu après l'arrivée, puis de temps en temps
-  const next = () => setTimeout(() => { if (enabled && !document.hidden) school(); next(); }, 15000 + Math.random() * 15000);
+  // un premier banc peu après l'arrivée, puis de temps en temps (toutes les 45 à 75 secondes)
+  const next = () => setTimeout(() => { if (enabled && !document.hidden) school(); next(); }, 45000 + Math.random() * 30000);
   setTimeout(() => { if (enabled) school(); }, 2000);
   next();
 
@@ -437,3 +467,8 @@ document.querySelectorAll('a.lang').forEach(a => {
     holo(card);
   });
 })();
+
+// Tout lien vers un autre site s'ouvre dans un nouvel onglet
+document.querySelectorAll('a[href^="http"]').forEach(a => {
+  if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; }
+});

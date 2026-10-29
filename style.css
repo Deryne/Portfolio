@@ -734,3 +734,10 @@ footer { border-top-color: var(--hairline); }
 }
 .player__track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
 @media (hover: none) { .player__bar { opacity: 1; } }
+.player__yt {
+  flex-shrink: 0; display: grid; place-items: center; width: 30px; height: 22px; border-radius: 6px;
+  opacity: .85; transition: opacity .15s, transform .15s;
+}
+.player__yt svg { width: 22px; height: 16px; display: block; }
+.player__yt:hover, .player__yt:focus-visible { opacity: 1; transform: scale(1.12); }
+.player__yt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
