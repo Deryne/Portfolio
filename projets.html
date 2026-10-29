@@ -33,10 +33,15 @@
 
   <main>
     <section id="projets">
-
+      <div class="filters" role="group" aria-label="Filtrer par moteur">
+        <button class="filter is-active" data-filter="all" aria-pressed="true">Tous <span class="filter__count"></span></button>
+        <button class="filter" data-filter="unity" aria-pressed="false"><img src="images/outils/unity.svg" alt=""> Unity <span class="filter__count"></span></button>
+        <button class="filter" data-filter="unreal" aria-pressed="false"><img src="images/outils/unreal.svg" alt=""> Unreal <span class="filter__count"></span></button>
+        <button class="filter" data-filter="cpp" aria-pressed="false"><img src="images/outils/cplusplus.svg" alt=""> C++ <span class="filter__count"></span></button>
+      </div>
       <p class="section-lead">Clique sur une vidéo pour la lancer, ou sur une miniature pour l'agrandir.</p>
 
-      <article class="project" id="dragon-heist">
+      <article class="project" id="dragon-heist" data-engine="unity">
         <button class="video" data-yt="eHa63hYSk3M" aria-label="Lire la vidéo de Dragon Heist"></button>
         <div class="project__body">
           <p class="year">2026</p>
@@ -53,7 +58,7 @@
         </div>
       </article>
 
-      <article class="project" id="mask">
+      <article class="project" id="mask" data-engine="unity">
         <button class="video" data-yt="B4GymNxbt9g" aria-label="Lire la vidéo de Mask"></button>
         <div class="project__body">
           <p class="year">2026</p>
@@ -65,7 +70,7 @@
         </div>
       </article>
 
-      <article class="project" id="fly-me-to-the-room">
+      <article class="project" id="fly-me-to-the-room" data-engine="unreal">
         <button class="video" data-yt="cltRaqTl5Mg" aria-label="Lire la vidéo de Fly me to the Room"></button>
         <div class="project__body">
           <p class="year">2025</p>
@@ -77,7 +82,7 @@
         </div>
       </article>
 
-      <article class="project" id="star-nebula">
+      <article class="project" id="star-nebula" data-engine="unreal">
         <button class="video" data-yt="vIRRODfAk0g" aria-label="Lire la vidéo de Star Nebula"></button>
         <div class="project__body">
           <p class="year">2025</p>
@@ -92,7 +97,7 @@
         </div>
       </article>
 
-      <article class="project" id="the-raven">
+      <article class="project" id="the-raven" data-engine="unity">
         <button class="video" data-yt="gVHDz8_UDx8" aria-label="Lire la vidéo de The Raven"></button>
         <div class="project__body">
           <p class="year">2024</p>
@@ -102,7 +107,7 @@
         </div>
       </article>
 
-      <article class="project" id="mustang-runner">
+      <article class="project" id="mustang-runner" data-engine="cpp">
         <button class="video" data-yt="jNiAygSIh3o" aria-label="Lire la vidéo de Mustang Runner"></button>
         <div class="project__body">
           <p class="year">2024</p>
@@ -113,7 +118,7 @@
         </div>
       </article>
 
-      <article class="project" id="waterloose">
+      <article class="project" id="waterloose" data-engine="unreal">
         <button class="video" data-yt="ufqxh2Q9vwQ" aria-label="Lire la vidéo de WaterLoose"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
@@ -121,10 +126,16 @@
           <p class="meta">Unreal C++ &amp; Blueprints · UQAC · Équipe de 6</p>
           <p class="desc">Jeu de bateaux multijoueur PvP et PvE, réalisé en deux mois. Les équipes s'affrontent sur une carte fermée peuplée de monstres et de trésors. Objectif : détruire le port ennemi.</p>
           <p class="role">Level Design · Game Play · UI</p>
+          <div class="thumbs">
+            <img src="images/projets/waterloose-1.webp" alt="Bateau rouge près du port ennemi" loading="lazy">
+            <img src="images/projets/waterloose-2.webp" alt="Bateaux rouge et bleu face à un monstre marin, avec les bonus" loading="lazy">
+            <img src="images/projets/waterloose-3.webp" alt="Affrontement entre deux bateaux" loading="lazy">
+            <img src="images/projets/waterloose-4.png" alt="Bateaux et monstre marin vus du dessus" loading="lazy">
+          </div>
         </div>
       </article>
 
-      <article class="project" id="scales-and-forks">
+      <article class="project" id="scales-and-forks" data-engine="unity">
         <button class="video" data-yt="wqnSLnF5Rcc" aria-label="Lire la vidéo de Scales &amp; Forks"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
@@ -134,12 +145,16 @@
           <p class="role">Game Design · Game Play · UI</p>
           <a class="link" href="https://chevrubis.itch.io/scales-forks" target="_blank" rel="noopener">itch.io →</a>
           <div class="thumbs">
-            <img src="images/projets/scales-cover.webp" alt="Affiche de Scales &amp; Forks" loading="lazy">
+            <img src="images/projets/scales-titre.webp" alt="Titre de Scales &amp; Forks sur une vue du village" loading="lazy">
+            <img src="images/projets/scales-3.webp" alt="Fermes construites le long de la rivière" loading="lazy">
+            <img src="images/projets/scales-4.webp" alt="Villageois autour d'une ferme" loading="lazy">
+            <img src="images/projets/scales-1.png" alt="Ferme et ressources du village, vues du dessus" loading="lazy">
+            <img src="images/projets/scales-2.png" alt="Ressources à récolter au pied des falaises" loading="lazy">
           </div>
         </div>
       </article>
 
-      <article class="project" id="thalassa-rv">
+      <article class="project" id="thalassa-rv" data-engine="unity">
         <button class="video" data-yt="MAafIw4F0PQ" aria-label="Lire la vidéo de Thalassa RV"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
@@ -148,10 +163,17 @@
           <p class="desc">Projet en réalité virtuelle pour rassurer les personnes qui souffrent de thalassophobie.</p>
           <p class="role">Game Play · UI · Level Design</p>
           <a class="link" href="https://chevrubis.itch.io/thalassa-rv" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/thalassa-1.webp" alt="Fond marin sablonneux avec poissons et coraux" loading="lazy">
+            <img src="images/projets/thalassa-2.webp" alt="Récif de coraux colorés" loading="lazy">
+            <img src="images/projets/thalassa-3.webp" alt="Grands coraux tabulaires dans l'eau turquoise" loading="lazy">
+            <img src="images/projets/thalassa-4.webp" alt="Vue plongeante sur le fond marin et une cage de plongée" loading="lazy">
+            <img src="images/projets/thalassa-5.webp" alt="Cage de plongée au milieu des coraux" loading="lazy">
+          </div>
         </div>
       </article>
 
-      <article class="project" id="squirrel-vs-man">
+      <article class="project" id="squirrel-vs-man" data-engine="unity">
         <button class="video" data-yt="RU5ATIRwp10" aria-label="Lire la vidéo de Squirrel VS Man"></button>
         <div class="project__body">
           <p class="year">2023 – 2024</p>
@@ -160,10 +182,16 @@
           <p class="desc">Vous incarnez un écureuil qui veut chasser les chasseurs de sa forêt. Trop petit pour attaquer les humains directement, il suit les conseils des autres animaux, qui lui parlent du feu… Un jeu sans prise de tête qui vous fera peut-être sourire !</p>
           <p class="role">Game Design · Game Play · Cheffe de projet</p>
           <a class="link" href="https://chevrubis.itch.io/squirrel-vs-man" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/squirrel-cover.png" alt="Logo de Squirrel VS Man" loading="lazy">
+            <img src="images/projets/squirrel-1.webp" alt="Écran titre avec l'écureuil et les chasseurs" loading="lazy">
+            <img src="images/projets/squirrel-2.png" alt="L'écureuil traverse une clairière" loading="lazy">
+            <img src="images/projets/squirrel-3.webp" alt="L'écureuil devant la forêt en feu" loading="lazy">
+          </div>
         </div>
       </article>
 
-      <article class="project" id="snow-memories">
+      <article class="project" id="snow-memories" data-engine="unity">
         <button class="video" data-yt="BtSh83b8zgo" aria-label="Lire la vidéo de Snow Memories"></button>
         <div class="project__body">
           <p class="year">2023</p>
@@ -173,7 +201,7 @@
         </div>
       </article>
 
-      <article class="project" id="tales-of-stars">
+      <article class="project" id="tales-of-stars" data-engine="unity">
         <button class="video" data-yt="1OfIG6QMp6U" aria-label="Lire la vidéo de Tales of Stars"></button>
         <div class="project__body">
           <p class="year">2023</p>
@@ -192,7 +220,7 @@
         </div>
       </article>
 
-      <article class="project" id="virtual-campus">
+      <article class="project" id="virtual-campus" data-engine="unity">
         <button class="video" data-yt="bChaX3UtrPw" aria-label="Lire la vidéo de Virtual Campus"></button>
         <div class="project__body">
           <p class="year">2022</p>

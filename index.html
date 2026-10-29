@@ -30,18 +30,33 @@
           <h1>Deryne Four</h1>
           <p class="hero__lead">Game developer en R&amp;D chez Gameloft Paris. Je conçois des outils Unity, de la génération procédurale et des prototypes rapides, et je participe à des game jams dès que je peux.</p>
         </div>
-        <img class="hero__photo" src="images/profil.png" alt="Photo de Deryne Four">
+        <button class="flip" aria-label="Retourner la photo" aria-pressed="false">
+          <span class="flip__inner">
+            <img class="hero__photo flip__front" src="images/profil.png" alt="Photo de Deryne Four">
+            <img class="flip__back" src="images/profil-dessin.png" alt="Portrait dessiné de Deryne Four">
+          </span>
+        </button>
       </div>
       <div class="hero__links">
         <a class="btn" href="projets.html">Voir les projets</a>
-        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener">itch.io</a>
-        <a class="btn btn--ghost" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/itchio.svg" alt=""> itch.io</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/linkedin.svg" alt=""> LinkedIn</a>
         <a class="btn btn--ghost" href="CV_Deryne_Four.pdf" target="_blank">CV (PDF)</a>
       </div>
       <ul class="tags">
         <li>C#</li><li>C++</li><li>Unity (confirmé)</li><li>Unreal</li>
         <li>Génération procédurale</li><li>Architecture logicielle</li><li>Prototypage</li>
         <li>IA générative &amp; MCP</li><li>Git · GitLab · Perforce</li>
+      </ul>
+      <ul class="tools" aria-label="Outils">
+        <li><img src="images/outils/unity.svg" alt=""> Unity</li>
+        <li><img src="images/outils/unreal.svg" alt=""> Unreal</li>
+        <li><img src="images/outils/csharp.svg" alt=""> C#</li>
+        <li><img src="images/outils/cplusplus.svg" alt=""> C++</li>
+        <li><img src="images/outils/vscode.svg" alt=""> VS Code</li>
+        <li><img src="images/outils/claude.svg" alt=""> Claude</li>
+        <li><img src="images/outils/sourcetree.svg" alt=""> SourceTree</li>
+        <li><img src="images/outils/gitlab.svg" alt=""> GitLab</li>
       </ul>
     </section>
   </div>
@@ -92,22 +107,22 @@
           <span class="tile__body"><strong>Mustang Runner</strong><span>Runner en C++ avec le mentorat d'Ubisoft Annecy</span><em>C++ · Develop@Ubisoft</em></span>
         </a>
         <a class="tile" href="projets.html#waterloose">
-          <img src="https://i.ytimg.com/vi/ufqxh2Q9vwQ/hqdefault.jpg" alt="" loading="lazy">
+          <img src="images/projets/waterloose-2.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
           <span class="tile__body"><strong>WaterLoose</strong><span>Batailles de bateaux en PvP et PvE</span><em>Unreal · Multijoueur</em></span>
         </a>
         <a class="tile" href="projets.html#scales-and-forks">
-          <img src="images/projets/scales-cover.webp" alt="" loading="lazy">
+          <img src="images/projets/scales-titre.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
           <span class="tile__body"><strong>Scales &amp; Forks</strong><span>Faire cohabiter un village et des dragons</span><em>Unity · Gestion</em></span>
         </a>
         <a class="tile" href="projets.html#thalassa-rv">
-          <img src="https://i.ytimg.com/vi/MAafIw4F0PQ/hqdefault.jpg" alt="" loading="lazy">
+          <img src="images/projets/thalassa-1.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
           <span class="tile__body"><strong>Thalassa RV</strong><span>La VR pour apaiser la thalassophobie</span><em>Unity · Réalité virtuelle</em></span>
         </a>
         <a class="tile" href="projets.html#squirrel-vs-man">
-          <img src="https://i.ytimg.com/vi/RU5ATIRwp10/hqdefault.jpg" alt="" loading="lazy">
+          <img src="images/projets/squirrel-3.webp" alt="" loading="lazy">
           <span class="tile__year">2023 – 2024</span>
           <span class="tile__body"><strong>Squirrel VS Man</strong><span>Un écureuil contre les chasseurs de sa forêt</span><em>Unity · 3D</em></span>
         </a>
@@ -217,8 +232,8 @@
       <h2>Contact</h2>
       <p>Envie d'échanger sur un projet ou un poste ? Écris-moi sur LinkedIn.</p>
       <div class="hero__links">
-        <a class="btn" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener">itch.io</a>
+        <a class="btn" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/linkedin.svg" alt=""> LinkedIn</a>
+        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener"><img class="btn__icon" src="images/outils/itchio.svg" alt=""> itch.io</a>
       </div>
     </section>
   </main>

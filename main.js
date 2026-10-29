@@ -35,3 +35,33 @@ window.addEventListener('load', () => {
   const target = location.hash && document.querySelector(location.hash);
   if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
 });
+
+// Page Projets : alternance sombre/clair et filtres par moteur
+const projects = [...document.querySelectorAll('.project')];
+const stripe = () => projects.filter(p => !p.hidden).forEach((p, i) => p.classList.toggle('is-light', i % 2 === 1));
+stripe();
+
+document.querySelectorAll('.filter').forEach(btn => {
+  const f = btn.dataset.filter;
+  btn.querySelector('.filter__count').textContent =
+    f === 'all' ? projects.length : projects.filter(p => p.dataset.engine === f).length;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(b => {
+      b.classList.toggle('is-active', b === btn);
+      b.setAttribute('aria-pressed', b === btn);
+    });
+    projects.forEach(p => { p.hidden = f !== 'all' && p.dataset.engine !== f; });
+    stripe();
+  });
+});
+
+// Accueil : la photo de profil se retourne pour montrer le portrait dessiné
+document.querySelectorAll('.flip').forEach(flip => {
+  const back = flip.querySelector('.flip__back');
+  const disable = () => { back.remove(); flip.disabled = true; flip.style.cursor = 'default'; };
+  if (back.complete && back.naturalWidth === 0) disable(); else back.addEventListener('error', disable);
+  flip.addEventListener('click', () => {
+    const on = flip.classList.toggle('is-flipped');
+    flip.setAttribute('aria-pressed', on);
+  });
+});

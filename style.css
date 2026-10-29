@@ -125,7 +125,14 @@ button.video:hover::after { transform: scale(1.08); }
 .contact h2::after { margin-inline: auto; }
 .contact .hero__links { justify-content: center; }
 
-footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2rem; border-top: 1px solid var(--surface-2); }
+footer {
+  display: flex; align-items: flex-end; justify-content: center;
+  min-height: clamp(220px, 32vw, 380px); padding: 2rem 1rem 1.5rem;
+  color: #f3e6d8; font-size: .9rem; text-shadow: 0 1px 6px rgba(0, 0, 0, .7);
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(13, 16, 32, 0) 30%, rgba(13, 16, 32, 0) 70%, rgba(13, 16, 32, .45) 100%),
+    url(images/bandeau-bas-tinyglade.jpg) center 45% / cover no-repeat;
+}
 
 dialog { border: 0; padding: 0; background: transparent; max-width: 95vw; max-height: 95vh; }
 dialog::backdrop { background: rgba(0, 0, 0, .85); }
@@ -184,7 +191,7 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
 .banner {
   background:
     linear-gradient(180deg, rgba(13, 16, 32, .55) 0%, rgba(13, 16, 32, .7) 60%, var(--bg) 100%),
-    url(images/bandeau.webp) center 35% / cover no-repeat;
+    url(images/bandeau-tinyglade.jpg) center 30% / cover no-repeat;
 }
 .banner .hero {
   max-width: 1100px; margin: 0 auto;
@@ -194,14 +201,14 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
 .banner .tags li { background: rgba(22, 26, 48, .75); }
 
 /* Projets : alternance sombre / clair */
-.project:nth-of-type(even) {
+.project.is-light {
   --light-text: #1d2033;
   background: #f1ede6; color: var(--light-text);
 }
-.project:nth-of-type(even) .meta { color: #2f55b8; }
-.project:nth-of-type(even) .role { color: #5a5f78; }
-.project:nth-of-type(even) .year { background: #e2dccf; color: #b4500f; }
-.project:nth-of-type(even) .link { color: #c2560f; }
+.project.is-light .meta { color: #2f55b8; }
+.project.is-light .role { color: #5a5f78; }
+.project.is-light .year { background: #e2dccf; color: #b4500f; }
+.project.is-light .link { color: #c2560f; }
 
 @media (max-width: 640px) {
   .banner .hero { padding-top: 3rem; }
@@ -255,3 +262,53 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
   .kiosk__controls { display: none; }
   .kiosk__track { grid-auto-columns: 78%; }
 }
+
+/* Logos des outils (accueil) */
+.tools { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.tools li {
+  display: flex; align-items: center; gap: .5rem;
+  background: #f4f5fb; color: #1d2033; font-weight: 500; font-size: .9rem;
+  padding: .4rem .8rem .4rem .5rem; border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3); transition: transform .15s;
+}
+.tools li:hover { transform: translateY(-2px); }
+.tools img { width: 26px; height: 26px; object-fit: contain; }
+
+@media (max-width: 640px) {
+  .tools { gap: .45rem; }
+  .tools li { font-size: .82rem; padding: .3rem .6rem .3rem .4rem; }
+  .tools img { width: 22px; height: 22px; }
+}
+
+/* Filtres par moteur (page Projets) */
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+.filter {
+  display: inline-flex; align-items: center; gap: .45rem; cursor: pointer;
+  background: var(--surface); color: var(--text); border: 1px solid var(--surface-2);
+  padding: .45rem .9rem; border-radius: 999px; font: 500 .92rem Inter, system-ui, sans-serif;
+}
+.filter img { width: 20px; height: 20px; object-fit: contain; background: #f4f5fb; border-radius: 4px; padding: 1px; }
+.filter__count { color: var(--muted); font-size: .8rem; }
+.filter:hover { border-color: var(--accent-2); }
+.filter.is-active { background: var(--accent); border-color: var(--accent); color: #1a0e05; }
+.filter.is-active .filter__count { color: #1a0e05; }
+.project[hidden] { display: none; }
+
+/* Photo de profil qui se retourne au clic */
+.flip {
+  flex-shrink: 0; padding: 0; border: 0; background: none; cursor: pointer;
+  perspective: 900px; border-radius: 50%;
+}
+.flip:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; }
+.flip__inner { display: block; position: relative; transition: transform .7s cubic-bezier(.4, .2, .2, 1); transform-style: preserve-3d; }
+.flip.is-flipped .flip__inner { transform: rotateY(180deg); }
+.flip__front, .flip__back { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip__back {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transform: rotateY(180deg) scale(1.12);
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .45));
+}
+.flip:not(.is-flipped):hover .flip__inner { transform: rotateY(12deg); }
+
+/* Logos dans les boutons itch.io / LinkedIn */
+.btn:has(.btn__icon) { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; }
+.btn__icon { width: 20px; height: 20px; object-fit: contain; background: #fff; border-radius: 4px; padding: 2px; }
