@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deryne Four – Portfolio</title>
+  <meta name="description" content="Portfolio de Deryne Four, ingénieure Unity & C# : génération procédurale, R&D, prototypage et game jams.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__logo" href="#top">DF</a>
+    <nav>
+      <a href="#projets">Projets</a>
+      <a href="#experience">Expérience</a>
+      <a href="#formation">Formation</a>
+      <a href="#loisirs">Loisirs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Ingénieure Unity &amp; C#</p>
+      <h1>Deryne Four</h1>
+      <p class="hero__lead">Game developer en R&amp;D chez Gameloft Paris. Je conçois des outils Unity, de la génération procédurale et des prototypes rapides, et je participe à des game jams dès que je peux.</p>
+      <div class="hero__links">
+        <a class="btn" href="#projets">Voir les projets</a>
+        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener">itch.io</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="CV_Deryne_Four.pdf" target="_blank">CV (PDF)</a>
+      </div>
+      <ul class="tags">
+        <li>C#</li><li>C++</li><li>Unity (confirmé)</li><li>Unreal</li>
+        <li>Génération procédurale</li><li>Architecture logicielle</li><li>Prototypage</li>
+        <li>IA générative &amp; MCP</li><li>Git · GitLab · Perforce</li>
+      </ul>
+    </section>
+
+    <section id="projets">
+      <h2>Projets</h2>
+      <p class="section-lead">Du plus récent au plus ancien. Clique sur une vidéo pour la lancer.</p>
+
+      <article class="project">
+        <button class="video" data-yt="eHa63hYSk3M" aria-label="Lire la vidéo de Dragon Heist"></button>
+        <div class="project__body">
+          <p class="year">2026</p>
+          <h3>Dragon Heist</h3>
+          <p class="meta">Unity C# · Wwise · Démo publiée sur Steam</p>
+          <p class="desc">Infiltrez-vous à 4 dans un château gardé par un dragon endormi, récupérez un maximum d'or et de trésors et fuyez avant le réveil du dragon.</p>
+          <a class="link link--steam" href="https://store.steampowered.com/app/5049260/Dragon_Heist/" target="_blank" rel="noopener"><img src="images/logos/steam.webp" alt=""> Voir sur Steam →</a>
+          <div class="thumbs">
+            <img src="images/projets/dragon-heist-1.webp" alt="Chevalier dans les rues de la ville" loading="lazy">
+            <img src="images/projets/dragon-heist-2.webp" alt="Dragon sur son trésor" loading="lazy">
+            <img src="images/projets/dragon-heist-3.webp" alt="Sélection du personnage Torquil" loading="lazy">
+            <img src="images/projets/dragon-heist-4.webp" alt="Chevalier face au dragon" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="B4GymNxbt9g" aria-label="Lire la vidéo de Mask"></button>
+        <div class="project__body">
+          <p class="year">2026</p>
+          <h3>Mask</h3>
+          <p class="meta">Unity C# · Global Game Jam 2026 · 48 h · Équipe de 3</p>
+          <p class="desc">Le thème de la jam était « Masque ». On incarne un soldat de la Première Guerre mondiale qui doit récupérer des masques avant qu'une attaque au gaz moutarde n'atteigne sa tranchée.</p>
+          <p class="role">Game Play · UI · Cinématiques</p>
+          <a class="link" href="https://chevrubis.itch.io/mask-arya-operation" target="_blank" rel="noopener">itch.io →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="cltRaqTl5Mg" aria-label="Lire la vidéo de Fly me to the Room"></button>
+        <div class="project__body">
+          <p class="year">2025</p>
+          <h3>Fly me to the Room</h3>
+          <p class="meta">Unreal C++ · DTJ Game Jam · 36 h · Équipe de 3</p>
+          <p class="desc">Incarnez une mouche qui a besoin de ses amies pour sortir de la pièce. Le thème de la jam était « One room ».</p>
+          <p class="role">Game Play · Physique · QTE</p>
+          <a class="link" href="https://vraus.itch.io/fly-me-to-the-room" target="_blank" rel="noopener">itch.io →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="vIRRODfAk0g" aria-label="Lire la vidéo de Star Nebula"></button>
+        <div class="project__body">
+          <p class="year">2025</p>
+          <h3>Star Nebula</h3>
+          <p class="meta">Unreal Blueprints · Game jam d'une semaine · Équipe de 5</p>
+          <p class="desc">Combat spatial multijoueur : chaque joueur choisit son vaisseau, puis part détruire les tourelles d'une station au milieu d'un champ d'astéroïdes.</p>
+          <div class="thumbs">
+            <img src="images/projets/star-nebula-1.webp" alt="Menu de sélection du vaisseau" loading="lazy">
+            <img src="images/projets/star-nebula-2.webp" alt="Attaque d'une station spatiale" loading="lazy">
+            <img src="images/projets/star-nebula-3.webp" alt="Vaisseau devant la Terre et des astéroïdes" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="gVHDz8_UDx8" aria-label="Lire la vidéo de The Raven"></button>
+        <div class="project__body">
+          <p class="year">2024</p>
+          <h3>The Raven</h3>
+          <p class="meta">Unity C# · Solo · Cadeau d'anniversaire</p>
+          <p class="desc">Vous jouez un corbeau piégé dans un cimetière, condamné à obéir aux dernières volontés des statues et des tombes.</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="jNiAygSIh3o" aria-label="Lire la vidéo de Mustang Runner"></button>
+        <div class="project__body">
+          <p class="year">2024</p>
+          <h3>Mustang Runner</h3>
+          <p class="meta">C++ · Develop@Ubisoft, mentorat Ubisoft Annecy</p>
+          <p class="desc">Un runner développé en C++ pendant le programme Develop@Ubisoft, accompagné par deux mentors d'Ubisoft Annecy.</p>
+          <p class="role">Game Play · UI · Pooling</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="ufqxh2Q9vwQ" aria-label="Lire la vidéo de WaterLoose"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>WaterLoose</h3>
+          <p class="meta">Unreal C++ &amp; Blueprints · UQAC · Équipe de 6</p>
+          <p class="desc">Jeu de bateaux multijoueur PvP et PvE, réalisé en deux mois. Les équipes s'affrontent sur une carte fermée peuplée de monstres et de trésors. Objectif : détruire le port ennemi.</p>
+          <p class="role">Level Design · Game Play · UI</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="wqnSLnF5Rcc" aria-label="Lire la vidéo de Scales &amp; Forks"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>Scales &amp; Forks</h3>
+          <p class="meta">Unity C# · Jeu de gestion · UQAC</p>
+          <p class="desc">Jeu de gestion où l'on dirige un village dont les habitants et les dragons tentent de cohabiter : gestion du bonheur et des ressources, construction de bâtiments.</p>
+          <p class="role">Game Design · Game Play · UI</p>
+          <a class="link" href="https://chevrubis.itch.io/scales-forks" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/scales-cover.webp" alt="Affiche de Scales &amp; Forks" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="MAafIw4F0PQ" aria-label="Lire la vidéo de Thalassa RV"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>Thalassa RV</h3>
+          <p class="meta">Unity C# · Réalité virtuelle (Oculus) · UQAC</p>
+          <p class="desc">Projet en réalité virtuelle pour rassurer les personnes qui souffrent de thalassophobie.</p>
+          <p class="role">Game Play · UI · Level Design</p>
+          <a class="link" href="https://chevrubis.itch.io/thalassa-rv" target="_blank" rel="noopener">itch.io →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="RU5ATIRwp10" aria-label="Lire la vidéo de Squirrel VS Man"></button>
+        <div class="project__body">
+          <p class="year">2023 – 2024</p>
+          <h3>Squirrel VS Man</h3>
+          <p class="meta">Unity C# · RPG/FPS hybride · UQAC</p>
+          <p class="desc">Hybride entre RPG et FPS.</p>
+          <p class="role">Game Design · Game Play · Cheffe de projet</p>
+          <a class="link" href="https://chevrubis.itch.io/squirrel-vs-man" target="_blank" rel="noopener">itch.io →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="BtSh83b8zgo" aria-label="Lire la vidéo de Snow Memories"></button>
+        <div class="project__body">
+          <p class="year">2023</p>
+          <h3>Snow Memories</h3>
+          <p class="meta">Unity C# · Solo</p>
+          <p class="desc">Petit jeu créé seule, offert en cadeau d'anniversaire.</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="1OfIG6QMp6U" aria-label="Lire la vidéo de Tales of Stars"></button>
+        <div class="project__body">
+          <p class="year">2023</p>
+          <h3>Tales of Stars</h3>
+          <p class="meta">Unity C# · Platformer éducatif pour Android · EPF</p>
+          <p class="desc">Un platformer mobile en pixel art où l'on retrouve les étoiles des constellations et leurs légendes grecques, avec un mini-jeu pour relier les étoiles.</p>
+          <p class="role">Game Play · UI · Art · Cheffe de projet</p>
+          <a class="link" href="https://chevrubis.itch.io/tales-of-stars" target="_blank" rel="noopener">itch.io →</a>
+          <div class="thumbs">
+            <img src="images/projets/tales-2.jpg" alt="Écran titre de Tales of Stars" loading="lazy">
+            <img src="images/projets/tales-4.jpg" alt="Niveau du Cygne" loading="lazy">
+            <img src="images/projets/tales-5.jpg" alt="Tutoriel des actions" loading="lazy">
+            <img src="images/projets/tales-3.jpg" alt="Mini-jeu de la Couronne du Nord" loading="lazy">
+            <img src="images/projets/tales-1.jpg" alt="Dialogue sur la constellation de la Lyre" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <button class="video" data-yt="bChaX3UtrPw" aria-label="Lire la vidéo de Virtual Campus"></button>
+        <div class="project__body">
+          <p class="year">2022</p>
+          <h3>EPF Virtual Campus</h3>
+          <p class="meta">Unity C# · Photon · Multijoueur · EPF</p>
+          <p class="desc">Initiative multijoueur qui recrée le campus de l'école pour accueillir les élèves en ligne pendant le Covid.</p>
+          <p class="role">Cheffe de projet</p>
+          <div class="thumbs">
+            <img src="images/projets/epf-virtual-campus.png" alt="Logo EPF Virtual Campus" loading="lazy">
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
+      <h2>Expérience</h2>
+      <ol class="timeline">
+        <li>
+          <h3>Game Developer, CDI · Gameloft Paris, R&amp;D</h3>
+          <p class="meta">Depuis 2024 (plus de 2 ans)</p>
+          <ul>
+            <li>Outils Unity/C# qui accélèrent la production</li>
+            <li>Génération procédurale de contenu et architecture modulaire</li>
+            <li>POCs sur Unity et Unreal</li>
+            <li>Évaluation de solutions ML, IA générative et APIs pour le gameplay</li>
+            <li>Responsable de features majeures : code modulaire, testable et réutilisable</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Mentee Develop@Ubisoft · Ubisoft Annecy</h3>
+          <p class="meta">Oct. 2023 – Fév. 2024</p>
+          <p>Jeu individuel en C++, accompagné par deux mentors d'Ubisoft Annecy.</p>
+        </li>
+        <li>
+          <h3>Game Developer, stage · Gameloft Paris</h3>
+          <p class="meta">Sept. 2023 – Mars 2024 (6 mois)</p>
+          <p>Prototypes Unity/C# : évaluation du ML et de l'IA générative, code modulaire et réutilisable.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="formation">
+      <h2>Formation &amp; certifications</h2>
+      <div class="grid grid--2">
+        <article class="card card--logo">
+          <img src="images/logos/uqac.gif" alt="Logo UQAC">
+          <div>
+            <h3>Master 2 Informatique et Mathématiques, spécialité jeux vidéo</h3>
+            <p class="meta">UQAC, Université du Québec à Chicoutimi</p>
+            <p>Conception de jeux, moteurs de jeux, mathématiques et physique pour le jeu vidéo, jeux sérieux.</p>
+          </div>
+        </article>
+        <article class="card card--logo">
+          <img src="images/logos/epf.jpg" alt="Logo EPF">
+          <div>
+            <h3>Ingénieure généraliste, majeure Informatique et Numérique</h3>
+            <p class="meta">EPF Cachan</p>
+            <p>Génie logiciel, intelligence artificielle, virtualisation.</p>
+          </div>
+        </article>
+      </div>
+      <ul class="certs">
+        <li><img src="images/logos/unity.png" alt="" class="certs__logo"> Unity Confirmed (Unity Technologies)</li>
+        <li>Certifications Claude AI d'Anthropic : Claude Code in Action, Intro to Agent Skills, Intro to Subagents</li>
+        <li><a href="https://courses.tomlooman.com/p/unrealengine-cpp" target="_blank" rel="noopener">Professional Game Dev in C++ &amp; Unreal Engine</a> de Tom Looman (ex-Stanford CS193U)</li>
+      </ul>
+    </section>
+
+    <section id="loisirs">
+      <h2>Loisirs</h2>
+      <div class="hobbies">
+        <figure>
+          <img src="images/loisirs/crochet.jpg" alt="Poules en crochet" loading="lazy">
+          <figcaption>Crochet</figcaption>
+        </figure>
+        <figure>
+          <img src="images/loisirs/perles.webp" alt="Porte-clés poissons en perles" loading="lazy">
+          <figcaption>Tissage de perles</figcaption>
+        </figure>
+      </div>
+      <ul class="hobby-list">
+        <li><img src="images/logos/steam.webp" alt=""> Jeux vidéo : Baldur's Gate 3, Titanfall 2, Civilization 6</li>
+        <li><img src="images/logos/procreate.png" alt=""> Dessin numérique sur Procreate</li>
+        <li><span class="dot">⛵</span> Planche à voile et catamaran</li>
+        <li><span class="dot">🎮</span> Game jams</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Envie d'échanger sur un projet ou un poste ? Écris-moi sur LinkedIn.</p>
+      <div class="hero__links">
+        <a class="btn" href="https://www.linkedin.com/in/deryne-four/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://chevrubis.itch.io" target="_blank" rel="noopener">itch.io</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© Deryne Four</footer>
+
+  <dialog id="lightbox"><img alt=""><button aria-label="Fermer">×</button></dialog>
+  <script>
+    const box = document.getElementById('lightbox');
+    document.querySelectorAll('.video').forEach(btn => {
+      const id = btn.dataset.yt;
+      btn.style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;
+      btn.addEventListener('click', () => {
+        const frame = document.createElement('iframe');
+        frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+        frame.title = btn.getAttribute('aria-label');
+        frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        frame.className = 'video';
+        btn.replaceWith(frame);
+      });
+    });
+    document.querySelectorAll('.thumbs img, .hobbies img').forEach(img => {
+      img.addEventListener('click', () => {
+        box.querySelector('img').src = img.src;
+        box.querySelector('img').alt = img.alt;
+        box.showModal();
+      });
+    });
+    box.addEventListener('click', () => box.close());
+  </script>
+</body>
+</html>
