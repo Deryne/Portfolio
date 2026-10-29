@@ -1,12 +1,15 @@
 :root {
-  --bg: #0d1020;
-  --surface: #161a30;
-  --surface-2: #1f2442;
-  --text: #eceefa;
-  --muted: #a3a8c6;
-  --accent: #ff8a3d;
-  --accent-2: #7aa7ff;
+  --bg: #13201f;
+  --surface: #1b2d2c;
+  --surface-2: #2a4240;
+  --text: #f3ead7;
+  --muted: #b9c3b2;
+  --accent: #e89a3c;
+  --accent-2: #7cc7b8;
   --radius: 14px;
+  --gold: #d9b45a;
+  --plum: #9a6aa8;
+  --hairline: rgba(217, 180, 90, .22);
 }
 
 * { box-sizing: border-box; }
@@ -29,7 +32,7 @@ p { margin: 0 0 .8em; }
   position: sticky; top: 0; z-index: 10;
   display: flex; justify-content: space-between; align-items: center; gap: 1rem;
   padding: .8rem clamp(16px, 5vw, 64px);
-  background: rgba(13, 16, 32, .85);
+  background: rgba(19, 32, 31, .85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--surface-2);
 }
@@ -130,7 +133,7 @@ footer {
   min-height: clamp(220px, 32vw, 380px); padding: 2rem 1rem 1.5rem;
   color: #f3e6d8; font-size: .9rem; text-shadow: 0 1px 6px rgba(0, 0, 0, .7);
   background:
-    linear-gradient(180deg, var(--bg) 0%, rgba(13, 16, 32, 0) 30%, rgba(13, 16, 32, 0) 70%, rgba(13, 16, 32, .45) 100%),
+    linear-gradient(180deg, var(--bg) 0%, rgba(19, 32, 31, 0) 30%, rgba(19, 32, 31, 0) 70%, rgba(19, 32, 31, .45) 100%),
     url(images/bandeau-bas-tinyglade.jpg) center 45% / cover no-repeat;
 }
 
@@ -190,7 +193,7 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
 /* Bandeau d'en-tête */
 .banner {
   background:
-    linear-gradient(180deg, rgba(13, 16, 32, .55) 0%, rgba(13, 16, 32, .7) 60%, var(--bg) 100%),
+    linear-gradient(180deg, rgba(19, 32, 31, .55) 0%, rgba(19, 32, 31, .7) 60%, var(--bg) 100%),
     url(images/bandeau-tinyglade.jpg) center 30% / cover no-repeat;
 }
 .banner .hero {
@@ -243,7 +246,7 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
 .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
 .tile::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(13, 16, 32, 0) 35%, rgba(13, 16, 32, .92) 85%);
+  background: linear-gradient(180deg, rgba(19, 32, 31, 0) 35%, rgba(19, 32, 31, .92) 85%);
 }
 .tile:hover img, .tile:focus-visible img { transform: scale(1.07); }
 .tile:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
@@ -379,6 +382,7 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
 .hcard--psy   { --c1: #e5a4f0; --c2: #8a4fc4; }
 .hcard--wind  { --c1: #a8e6c8; --c2: #2f9c74; }
 .hcard--fire  { --c1: #ff8a7a; --c2: #a32638; }
+.hcard--ink   { --c1: #6fd6c0; --c2: #1f7f8a; }
 .hcard:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 16px; }
 .hcard__inner {
   position: relative; display: block; width: 100%; height: 100%;
@@ -597,3 +601,54 @@ dialog button { position: fixed; top: 1rem; right: 1.5rem; background: none; bor
   .booster, .hcard.is-dealt, .booster-stage.is-opening .booster, .booster-stage.is-opening .booster__tear { animation: none; }
 }
 .section-lead.is-fading { opacity: 0; transition: opacity .6s; }
+
+/* Liens vers les écoles (logo et nom) */
+.card__logo-link { flex-shrink: 0; border-radius: 10px; transition: transform .15s; }
+.card__logo-link:hover { transform: translateY(-2px); }
+.card .meta a { color: inherit; text-decoration: none; border-bottom: 1px dotted currentColor; }
+.card .meta a:hover { color: var(--accent); }
+
+/* Touche Art nouveau, inspirée du portrait dessiné : crème, ocre, turquoise, or et prune */
+body {
+  background:
+    radial-gradient(ellipse 60% 40% at 0% 0%, rgba(124, 199, 184, .07), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 100% 30%, rgba(154, 106, 168, .07), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(232, 154, 60, .06), transparent 70%),
+    var(--bg);
+}
+h1, h2, .nav__logo, .tile__body strong, .booster__title {
+  font-family: "Federo", "Space Grotesk", sans-serif; font-weight: 400; letter-spacing: .02em;
+}
+h1 { color: #f8efdc; }
+.eyebrow { color: var(--gold); }
+
+/* sous les titres de section : une arabesque dorée au lieu d'une simple barre */
+h2::after {
+  width: 130px; height: 16px; border-radius: 0; margin-top: .35em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 16'%3E%3Cg fill='none' stroke='%23d9b45a' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M2 8 C 20 8, 30 2, 44 6 S 56 13, 65 8 S 78 3, 86 6 S 110 8, 128 8'/%3E%3Cpath d='M58 8 q7 -7 14 0 q-7 7 -14 0z' fill='%23d9b45a'/%3E%3Ccircle cx='3' cy='8' r='2' fill='%23d9b45a'/%3E%3Ccircle cx='127' cy='8' r='2' fill='%23d9b45a'/%3E%3C/g%3E%3C/svg%3E") left center / contain no-repeat;
+}
+.contact h2::after { margin-inline: auto; background-position: center; }
+
+/* cadres : un fin liseré doré et des coins un peu plus doux */
+.card, .project, .certs li, .tags li, .filter, .kiosk__controls button, .fish-toggle, .nav a.lang {
+  border-color: var(--hairline);
+}
+.card, .project, .certs li { border: 1px solid var(--hairline); }
+.project, .card { border-radius: 18px; }
+.nav { border-bottom-color: var(--hairline); }
+footer { border-top-color: var(--hairline); }
+.tile { box-shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 0 0 1px var(--hairline); }
+
+/* photo de profil : double anneau doré façon médaillon */
+.hero__photo { box-shadow: 0 0 0 3px var(--gold), 0 0 0 7px rgba(19, 32, 31, .9), 0 0 0 8px var(--gold); }
+
+/* boutons et accents */
+.btn { color: #2a1503; }
+.btn--ghost { color: var(--text); border-color: rgba(217, 180, 90, .45); }
+.btn--ghost:hover { border-color: var(--gold); }
+.timeline { border-left-color: var(--hairline); }
+.timeline > li::before { background: radial-gradient(circle at 35% 30%, #fbe3b0, var(--accent) 60%, #a85a14); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--gold); }
+.project.is-light { background: #f3ead7; }
+.project.is-light .meta { color: #1f7f72; }
+.year { background: rgba(217, 180, 90, .15); color: var(--gold); }
+.project.is-light .year { background: #e6d6b4; color: #8a4a12; }

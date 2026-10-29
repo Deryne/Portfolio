@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of Deryne Four, Unity &amp; C# engineer: procedural generation, R&amp;D, rapid prototyping and game jams.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Federo&family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="alternate" hreflang="en" href="https://deryne.github.io/Portfolio/">
   <link rel="alternate" hreflang="fr" href="https://deryne.github.io/Portfolio/fr/">
@@ -180,18 +180,18 @@
       <h2>Education &amp; certifications</h2>
       <div class="grid grid--2">
         <article class="card card--logo">
-          <img src="images/logos/uqac.gif" alt="UQAC logo">
+          <a class="card__logo-link" href="https://www.uqac.ca" target="_blank" rel="noopener"><img src="images/logos/uqac.gif" alt="UQAC logo"></a>
           <div>
             <h3>Master's in Computer Science and Mathematics, video game specialization</h3>
-            <p class="meta">UQAC, Université du Québec à Chicoutimi</p>
+            <p class="meta"><a href="https://www.uqac.ca" target="_blank" rel="noopener">UQAC, Université du Québec à Chicoutimi</a></p>
             <p>Game design, game engines, mathematics and physics for games, serious games.</p>
           </div>
         </article>
         <article class="card card--logo">
-          <img src="images/logos/epf.jpg" alt="EPF logo">
+          <a class="card__logo-link" href="https://www.epf.fr" target="_blank" rel="noopener"><img src="images/logos/epf.jpg" alt="EPF logo"></a>
           <div>
             <h3>General engineering degree, Computer Science and Digital major</h3>
-            <p class="meta">EPF Cachan</p>
+            <p class="meta"><a href="https://www.epf.fr" target="_blank" rel="noopener">EPF Cachan</a></p>
             <p>Software engineering, artificial intelligence, virtualization.</p>
           </div>
         </article>
@@ -205,7 +205,7 @@
 
     <section id="loisirs">
       <h2>Hobbies</h2>
-      <p class="section-lead">Open the booster pack to discover five cards.</p>
+      <p class="section-lead">Open the booster pack to discover six cards.</p>
       <div class="cards">
         <button class="hcard hcard--yarn" aria-label="Open the Crochet card" data-label-open="Crochet card, click to enlarge the photo">
           <span class="hcard__inner">
@@ -234,6 +234,16 @@
               <span class="hcard__top"><strong>Digital drawing</strong><span class="hcard__type">🎨</span></span>
               <img src="images/loisirs/dessin.webp" alt="Drawing of a winged woman with blond hair, made in Procreate" loading="lazy">
               <span class="hcard__text">Characters drawn in Procreate.</span>
+            </span>
+          </span>
+        </button>
+        <button class="hcard hcard--ink" aria-label="Open the Traditional drawing card" data-label-open="Traditional drawing card, click to enlarge the drawing">
+          <span class="hcard__inner">
+            <span class="hcard__back"><span class="hcard__emblem">DF</span><span class="hcard__hint">Ultra rare</span></span>
+            <span class="hcard__front">
+              <span class="hcard__top"><strong>Traditional drawing</strong><span class="hcard__type">✏️</span></span>
+              <img src="images/loisirs/dessin-traditionnel.webp" alt="Colored pencil drawing of a mermaid holding a golden trident" loading="lazy">
+              <span class="hcard__text">Colored pencils in my sketchbook.</span>
             </span>
           </span>
         </button>
