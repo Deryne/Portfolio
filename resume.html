@@ -7,6 +7,7 @@
   <meta name="description" content="Resume of Deryne Four, Unity &amp; C# engineer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="alternate" hreflang="fr" href="https://deryne.github.io/Portfolio/fr/cv.html">
   <link href="https://fonts.googleapis.com/css2?family=Federo&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root { --ink: #1d2726; --muted: #55605d; --accent: #b8660f; --teal: #1f7f72; --line: #d9b45a; }
@@ -53,8 +54,8 @@
 <body>
   <div class="toolbar">
     <a href="index.html">← Portfolio</a>
-    <button onclick="print()">Save as PDF / Print</button>
-    <a href="CV_Deryne_Four.pdf" target="_blank">French version (PDF)</a>
+    <button id="pdf">Download PDF</button>
+    <a href="fr/cv.html" hreflang="fr">Version française</a>
   </div>
 
   <main class="page">
@@ -118,5 +119,7 @@
     <h2>HOBBIES</h2>
     <p>Video games (Baldur's Gate 3, Titanfall 2, Civilization 6), crochet and crafts, digital drawing (Procreate), windsurfing / catamaran sailing, game jams.</p>
   </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="cv-pdf.js"></script>
 </body>
 </html>
