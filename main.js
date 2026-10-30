@@ -472,3 +472,8 @@ document.querySelectorAll('a.lang').forEach(a => {
 document.querySelectorAll('a[href^="http"]').forEach(a => {
   if (a.host !== location.host) { a.target = '_blank'; a.rel = 'noopener'; }
 });
+
+// Les noms propres (le mien, les titres de jeux) ne doivent pas être traduits par le navigateur
+document.querySelectorAll('.project h3, .tile__body strong, .hcard__emblem, .booster__logo').forEach(el => {
+  el.translate = false; el.classList.add('notranslate');
+});
